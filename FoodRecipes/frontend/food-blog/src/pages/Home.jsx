@@ -1,5 +1,5 @@
 import React from 'react';
-import HomeImg from '../assets/home.png'
+import HomeImg from '../assets/Home.png'
 import RecipeItem from '../components/RecipeItem';
 
 const Home = () => {
