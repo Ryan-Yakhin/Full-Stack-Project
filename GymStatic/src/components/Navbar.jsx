@@ -14,7 +14,7 @@ const Navbar = () => {
 
         {/* LOGO */}
         <div className="cursor-pointer text-2xl font-bold text-white font-[Caveat]">
-          FitLife Gym Gami Imup
+          FitLife Gym 
         </div>
 
         {/* Desktop Navigation */}
