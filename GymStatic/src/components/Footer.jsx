@@ -65,7 +65,7 @@ const Footer = () => {
 
             {/* Bottom Section */}
             <div className='bg-gray-900 text-gray-500 text-center py-4'>
-                <p>@ 2026 FitLife Gym Gami Imup. All rights reserved.</p>
+                <p>@ 2026 FitLife Gym. All rights reserved.</p>
             </div>
         </footer>
     );
