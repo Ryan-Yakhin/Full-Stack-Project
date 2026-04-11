@@ -5,6 +5,7 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import MainNavigation from './components/MainNavigation';
 import axios from 'axios';
 import AddFoodRecipe from './pages/AddFoodRecipe';
+import EditRecipe from './pages/EditRecipe';
 
 const getAllRecipes = async () => {
   let allRecipes = []
@@ -19,11 +20,18 @@ const getMyRecipe = async () => {
   let allRecipes = await getAllRecipes();
   return allRecipes.filter(item => item.createdBy === user._id);
 }
+
+const getFavRecipes = async () => {
+  return JSON.parse(localStorage.getItem("fav")) ?? [];
+}
+
 const router = createBrowserRouter([
   {path:"/", element:<MainNavigation/>, children: [
     {path:"/", element:<Home/>, loader: getAllRecipes},
     {path:"/myRecipe", element:<Home/>, loader: getMyRecipe},
-    {path:"/addRecipe", element:<AddFoodRecipe/>}
+    {path:"/addRecipe", element:<AddFoodRecipe/>},
+    {path:"/favRecipe", element:<Home/>, loader: getFavRecipes},
+    {path:"/editRecipe/:id", element:<EditRecipe/>}
   ]}
 ])
   

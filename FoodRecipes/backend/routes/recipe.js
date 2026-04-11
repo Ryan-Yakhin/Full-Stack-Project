@@ -6,7 +6,7 @@ const veryifyToken = require('../middleware/auth');
 router.get("/",getRecipes) // Get all Recipes
 router.get("/:id",getRecipe) // Get recipe by id
 router.post("/",upload.single('file'), veryifyToken, addRecipe) // Create a new recipe
-router.put("/:id",updateRecipe) // Update a recipe by id
+router.put("/:id", upload.single('file'), veryifyToken, updateRecipe) // Update a recipe by id
 router.delete("/:id",deleteRecipe) // Delete a recipe by id
 
 module.exports = router;

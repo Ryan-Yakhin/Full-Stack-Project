@@ -25,9 +25,9 @@ const getRecipe = async (req,res)=>{
 
 const addRecipe = async (req,res)=>{
     console.log(req.user)
-    const {title,ingredients,instructions} = req.body
+    const {title,ingredients,instructions,time} = req.body
 
-    if(!title || !ingredients || !instructions){
+    if(!title || !ingredients || !instructions || !time){
         return res.status(400).json({message:"Please fill all the fields"})
     }
 
@@ -35,6 +35,7 @@ const addRecipe = async (req,res)=>{
         title,
         ingredients,
         instructions,
+        time,
         coverImg:req.file.filename,
         createdBy:req.user.id
     })
@@ -43,11 +44,12 @@ const addRecipe = async (req,res)=>{
 
 const updateRecipe = async (req,res)=>{
     const {title,ingredients,instructions} = req.body
-    let recipe = Recipes.findById(req.params.id)
+    let recipe = await Recipes.findById(req.params.id)
 
     try{
         if(recipe){
-            await Recipes.findByIdAndUpdate(req.params.id,req.body,{new:true})
+            let coverImg = req.file ?. filename? req.file?.filename : reccipe.coverImg
+            await Recipes.findByIdAndUpdate(req.params.id,{...req.body, coverImg},{new:true})
             res.json({title,ingredients,instructions})
         } 
     } catch (err) {
@@ -57,14 +59,10 @@ const updateRecipe = async (req,res)=>{
 }
 
 const deleteRecipe = async (req,res)=>{
-    const {title,ingredients,instructions} = req.body
-    let recipe = Recipes.findById(req.params.id)
-
+    
     try{
-        if(recipe){
-            await Recipes.findByIdAndDelete(req.params.id)
-            res.json({message:"Recipe Deleted"})
-        } 
+        await Recipes.deleteOne({_id:req.params.id})
+        res.json({status:"ok"})
     } catch (err) {
         return res.status(404).json({message:"Error"})
     }
