@@ -6,7 +6,8 @@ import { FaHeart } from "react-icons/fa6";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+//import axios from 'axios';
+import API from '../api/api';
 
 export default function RecipeItem() {
     const recipes = useLoaderData();
@@ -21,7 +22,7 @@ export default function RecipeItem() {
     }, [recipes])
 
     const onDelete = async (id) => {
-        await axios.delete(`http://localhost:5000/recipe/${id}`)
+        await API.delete(`/recipe/${id}`)
                         .then((res)=> console.log(res))
         setAllRecipe(recipes=>recipes.filter(recipe=>recipe._id !== id))
         let filterItem  = favItems.filter(recipe => recipe._id !== id)

@@ -3,13 +3,14 @@ import './App.css';
 import Home from './pages/Home';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import MainNavigation from './components/MainNavigation';
-import axios from 'axios';
+//import axios from 'axios';
 import AddFoodRecipe from './pages/AddFoodRecipe';
 import EditRecipe from './pages/EditRecipe';
+import API from './api/api';
 
 const getAllRecipes = async () => {
   let allRecipes = []
-  await axios.get('http://localhost:5000/recipe').then(res => {
+  await API.get('/recipe').then(res => {
     allRecipes = res.data
   })
   return allRecipes;
