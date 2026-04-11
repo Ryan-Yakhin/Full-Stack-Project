@@ -16,7 +16,7 @@ export default function InputForm ({setIsOpen}) {
     .then((res) => {
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
-      setIsOpen();
+      setIsOpen(false);
     })
     .catch(data => setError(data.response?.data?.error)) 
 
