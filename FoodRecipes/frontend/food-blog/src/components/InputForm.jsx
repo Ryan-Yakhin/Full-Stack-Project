@@ -32,6 +32,9 @@ export default function InputForm ({setIsOpen}) {
             <label>Password</label>
             <input type="password" className='password' onChange={(e)=>setPassword(e.target.value)} required></input>
         </div>
+        <div className='form-control'>
+            <label>Create a new account(dummy Email and password) and Login</label>
+        </div>
         <button type="submit">{(isSignUp) ? "Sign Up" : "Login"}</button><br />
         {(error != "") && <h6 className='error'>{error}</h6>} <br />
         <p onClick={()=>setIsSignUp(prev => !prev)}>{(isSignUp) ? "Already have an account?": "Create new account"}</p>
