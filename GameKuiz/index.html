@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameKuiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="screen active" id="start-screen">
+            <h1>Waktunya Kuiz</h1>
+            <p>Coba jawab pertanyaan di bawah ini!</p>
+            <button id="bmulai">Mulai Kuiz</button>
+        </div>
+
+        <div class="screen" id="kuiz-screen">
+
+            <div class="kuiz-header">
+                <h2 id="pertanyaan">Pertanyaan</h2>
+                <div class="kuiz-info">
+                    <p>
+                        Pertanyaan <span id="nomor-pertanyaan">1</span> dari <span id="total-pertanyaan">10</span>  
+                    </p>
+                    <p>
+                        Hasil: <span id="hasil">0</span>
+                    </p>
+                </div>
+                <div class="container-jawaban" id="container-jawaban">
+                    <!-- Jawaban akan diisi secara dinamis dengan JavaScript -->
+                </div>
+                <div class="bar-progress">
+                    <div class="progres" id="progress"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="screen" id="hasil-screen">
+            <h1>Hasil Kuiz</h1>
+            <div class="info-akhir">
+                <p>
+                    Kamu mendapatkan skor <span id="skor-akhir">0</span> dari <span id="total-pertanyaan">10</span>
+                </p>
+                <div id="pesan-akhir">Pesan Akhir</div>
+            </div>
+            <button id="bulang">Ulangi Kuiz</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
