@@ -1,0 +1,44 @@
+body{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items:center;
+    padding : 0px;
+    margin : 0px;
+    background-color: yellow;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 400px;
+    height: 250px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,.3);
+    background-color: #258c51;
+}
+
+.currency-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100px;
+    height: 100%;
+    font-size: 20px;
+    color: white;
+}
+
+select{
+    font-size: 16px;
+    padding: 8px;
+}

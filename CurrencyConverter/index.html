@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Coverter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2 style="color: white;">Currency Converter</h2>
+        <div class="currency-container">
+            <select id="currency">
+                <option value="IDR">IDR</option>
+                <option value="AUD">AUD</option>
+                <option value="USD" selected>USD</option>
+                <option value="JPY">JPY</option>
+            </select>
+            <input type="text" id="curinput" value="1">
+        </div>
+
+        <div class="currency-container">
+            <select id="convert">
+                <option value="IDR" selected >IDR</option>
+                <option value="AUD">AUD</option>
+                <option value="USD">USD</option>
+                <option value="JPY">JPY</option>
+            </select>
+            <input type="text" id="conOutput" disabled>
+        </div>
+        <p style="color: white;" class="exchange-rate" id="exchange-rate"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
