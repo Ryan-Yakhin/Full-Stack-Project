@@ -18,8 +18,9 @@ function updateRate(){
     
         const amount = parseFloat(inputCurEl.value);
         inputConEl.value = (amount * rate).toFixed(2);
-    });
 
+        console.log(data);
+    });
 }
 
 currencyEl.addEventListener("change", updateRate);
