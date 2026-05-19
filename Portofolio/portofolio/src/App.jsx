@@ -3,9 +3,9 @@ import Main from "./portofolio/Main.jsx";
 
 export default function App() {
   return (
-    <>
-    <Navbar></Navbar>
-    <Main></Main>
-    </>
+    <div>
+      <Navbar></Navbar>
+      <Main></Main>
+    </div>
   );
 }
