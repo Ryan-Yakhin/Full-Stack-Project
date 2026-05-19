@@ -3,7 +3,7 @@ import Main from "./portofolio/Main.jsx";
 
 export default function App() {
   return (
-    <div>
+    <div className="scroll-smooth">
       <Navbar></Navbar>
       <Main></Main>
     </div>

@@ -13,16 +13,16 @@ export default function Navbar(){
                 </div>
                 <div className="basis-1/2 flex items-center justify-evenly"> {/*LINK*/}
                    <a href="#services"><span>Services </span></a>
-                    <a href=""><span>Portofolios </span></a>
-                   <a href=""><span>Experiences </span></a>
-                   <a href=""><span>Contact</span></a>
+                    <a href="#"><span>Portofolios </span></a>
+                   <a href="#"><span>Experiences </span></a>
+                   <a href="#"><span>Contact</span></a>
                 </div>
                 <div className="uppercase text-sm md:text-lg font-bold"> {/*DL MODE*/}
                     <span className="hidden dark:inline end:0"
 				><svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
 					<path
-						fill-rule="evenodd"
-						clip-rule="evenodd"
+						FillRule="evenodd"
+						ClipRule="evenodd"
 						d="M17.715 15.15A6.5 6.5 0 0 1 9 6.035C6.106 6.922 4 9.645 4 12.867c0 3.94 3.153 7.136 7.042 7.136 3.101 0 5.734-2.032 6.673-4.853Z"
 						className="fill-sky-400/20"
 					></path>
@@ -31,8 +31,8 @@ export default function Navbar(){
 						className="fill-sky-500"
 					></path>
 					<path
-						fill-rule="evenodd"
-						clip-rule="evenodd"
+						FillRule="evenodd"
+						ClipRule="evenodd"
 						d="M17 3a1 1 0 0 1 1 1 2 2 0 0 0 2 2 1 1 0 1 1 0 2 2 2 0 0 0-2 2 1 1 0 1 1-2 0 2 2 0 0 0-2-2 1 1 0 1 1 0-2 2 2 0 0 0 2-2 1 1 0 0 1 1-1Z"
 						className="fill-sky-500"
 					></path></svg></span>
