@@ -1,8 +1,6 @@
 import pic from "../assets/pic.png";
-import Github from "../assets/Github.svg";
-import Instagram from "../assets/Instagram.svg";
-import X from "../assets/X.svg";
-import Linkedin from "../assets/Linkedin.svg";
+import { FaWhatsapp, FaGithub, FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { MdOutlineMail } from "react-icons/md";
 import Crown from "../assets/crown.svg";
 import Apl from "../assets/app.svg";
 import Globe from "../assets/globe.svg";
@@ -56,12 +54,6 @@ export default function Main(){
               <span className="font-extralight text-blue-500">Kogoya</span>
             </h3>
             <p className="font-light">Junior Front-End Developer with 1 year of hands-on experience building personal projects. Proficient in HTML, CSS, JavaScript, React, and Tailwind CSS, with a focus on creating responsive and user-friendly interfaces.</p>
-            <div className="flex flex-row mt-5 space-x-3"> {/*Logo*/}
-              <img className="w-6 h-6" src={Github} alt="" />
-              <img className="w-6 h-6" src={Instagram} alt="" />
-              <img className="w-6 h-6" src={X} alt="" />
-              <img className="w-6 h-6" src={Linkedin} alt="" />
-            </div>
           </div>
           <div className="mx-auto md:mt-0 flex-shrink-0 md:w-1/3 lg:w-1/3"> {/*Picture*/}
             <img src={pic} className="w-48 h-48 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full border-2 border-black object-cover" alt="pic" />
@@ -72,7 +64,7 @@ export default function Main(){
       <div id="services" className="bg-slate-50 pt-20 pb-20"> {/*Main 2*/}
         <div className="w-9/12 mx-auto">
         <div className="flex flex-col place-items-center"> {/*Part 1*/}
-            <h2 className="uppercase text-xs font-extralight tracking-widest text-gray-500">- Services</h2>
+            <h2 className="uppercase text-xs font-extralight tracking-widest text-gray-500">- my Services</h2>
             <h1 className=" text-3xl font-semibold text-gray-700">Specialized In</h1>
         </div> 
         <div className="flex flex-col lg:grid md:grid grid-cols-3 gap-10 py-10">{/*Part 2*/}
@@ -100,7 +92,7 @@ export default function Main(){
             <div className="flex flex-col lg:grid md:grid grid-cols-2 gap-10 py-10"> {/*part2*/}
               {
                 portofolios.map((item, index) =>(
-                    <div key={index} className="rounded-lg shadow-lg">
+                    <div key={index} className="rounded-lg">
                       <a href={item.link} className="flex flex-col items-center hover:scale-105 transition-transform duration-300 cursor-pointer">
                         <div className="w-full aspect-[16/9] overflow-hidden rounded-lg">
                           <img className="w-full h-full" src={item.pict} alt="" />
@@ -113,6 +105,36 @@ export default function Main(){
                 )
               }
             </div>
+          </div>
+      </div>
+
+      <div id="contacts" className="bg-slate-50 pt-20 pb-20"> {/*main 4*/}
+          <div className="w-9/12 mx-auto">
+             <div className="flex flex-col place-items-center"> {/*part 1*/}
+                  <h2 className="uppercase text-gray-500 font-extralight text-xs tracking-widest">- my contact</h2>
+                  <h1 className="text-gray-700 font-semibold text-3xl">Contact</h1>
+              </div>
+              <div className="mt-4 flex flex-row items-center justify-center"> {/*Part 2*/}
+          
+                        <a href="https://www.facebook.com/ryan.kogoya/" className='p-3 bg-slate-50 rounded-full hover:bg-blue-600 transition cursor-pointer'>
+                            <FaFacebook className="h-6 w-6"/>
+                        </a>
+                         <a href="https://www.instagram.com/aku_ryannn/" className='p-3 bg-slate-50 rounded-full hover:bg-red-500 transition cursor-pointer'>
+                            <FaInstagram className="h-6 w-6"/>
+                        </a>
+                         <a href="https://github.com/Ryan-Yakhin" className='p-3 bg-slate-50 rounded-full hover:bg-gray-500 transition cursor-pointer'>
+                            <FaGithub className="h-6 w-6"/>
+                        </a>
+                         <a href="https://www.linkedin.com/in/ryan-yakhin-kogoya-427372293/" className='p-3 bg-slate-50 rounded-full hover:bg-blue-600 transition cursor-pointer'>
+                            <FaLinkedin className="h-6 w-6"/>
+                        </a>
+                        <a href="https://wa.me/6281219946735" className='p-3 bg-slate-50 rounded-full hover:bg-green-500 transition cursor-pointer'>
+                            <FaWhatsapp className="h-6 w-6"/>
+                        </a>
+                        <a href="mailto:ryanyakhin4@gmail.com" className='p-3 bg-slate-50 rounded-full hover:bg-red-500 transition cursor-pointer'>
+                            <MdOutlineMail className="h-6 w-6"/>
+                        </a>
+                </div>
           </div>
       </div>
     </main>
