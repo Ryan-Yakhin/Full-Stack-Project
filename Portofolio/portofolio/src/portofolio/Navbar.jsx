@@ -17,7 +17,7 @@ export default function Navbar(){
                         <span className="font-extralight text-blue-500">Kogoya </span>
                     </a>
                 </div>
-                <div className="basis-1/2 flex items-center justify-evenly gap-2"> {/*LINK*/}
+                <div className="basis-1/2 flex items-center justify-evenly flex-col md:flex-row lg:flex-row"> {/*LINK*/}
                    {navLinks.map((link,index) => (
                         <a className="hover:text-slate-50 transition-colors duration-300 cursor-pointer" key={index} href={link.href}>
                             <span>{link.name}</span>
