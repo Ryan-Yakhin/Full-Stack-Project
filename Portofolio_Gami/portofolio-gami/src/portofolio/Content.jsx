@@ -1,6 +1,7 @@
 import Home from "./Home";
 import About from "./About";
 import Project from "./Project";
+import Contact from "./Contact";
 import { useState } from "react";
 
 export default function Content(){
@@ -43,6 +44,7 @@ export default function Content(){
                 {active === "home" && <Home/>}
                 {active === "about" && <About/>}
                 {active === "project" && <Project/>}
+                {active === "contact" && <Contact/>}
             </div>
         </div>
         </>

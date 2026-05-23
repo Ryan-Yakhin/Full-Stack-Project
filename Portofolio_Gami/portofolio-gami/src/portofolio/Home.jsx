@@ -31,7 +31,6 @@ export default function Home(){
     const text = temp[tempIndex].slice(0, charIndex);
 
     const [show, setShow] = useState(false);
-
         useEffect(() => {
         setShow(true);
     }, []);
