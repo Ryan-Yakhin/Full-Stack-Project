@@ -6,6 +6,7 @@ import Apl from "../assets/app.svg";
 import Globe from "../assets/globe.svg";
 import Gym from "../assets/gym.jpg";
 import Food from "../assets/food.jpg";
+import Porto from "../assets/porto.jpg";
 
 export default function Main(){
 
@@ -39,6 +40,12 @@ export default function Main(){
       title: "Food Recipe",
       desc : "This website is a Food Recipe application built using the MERN Stack (MongoDB, Express.js, React, Node.js) that allows users to view, add, and manage food recipes online.",
       pict : Food
+    },
+    {
+      link: "https://full-stack-project-uwuu.vercel.app/",
+      title: "Portoflio Gami",
+      desc : "This website is a portfolio website for a graphic designer, showcasing their work and skills. I built this website using React as the frontend framework to create reusable and interactive components, and Tailwind CSS to speed up styling and deliver a modern, responsive design.",
+      pict : Porto
     }
   ]
 
@@ -89,7 +96,7 @@ export default function Main(){
               <h2 className="uppercase font-extralight text-xs tracking-widest text-gray-500">- my works</h2>
               <h1 className="font-semibold text-3xl">Featured Portofolios</h1>
             </div>
-            <div className="flex flex-col lg:grid md:grid grid-cols-2 gap-10 py-10"> {/*part2*/}
+            <div className="flex flex-col lg:grid md:grid grid-cols-3 gap-10 py-10"> {/*part2*/}
               {
                 portofolios.map((item, index) =>(
                     <div key={index} className="rounded-lg">
