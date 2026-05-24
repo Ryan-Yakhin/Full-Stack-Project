@@ -20,20 +20,20 @@ export default function Contact(){
                 <span className="text-slate-50 font-semibold">Contact </span>
                 <span className="text-blue-500 font-extralight">Me</span>
             </div>
-            <div className={`mt-4 flex flex-row items-center justify-center gap-2
+            <div className={`min-w-screen h-screen px-10 mt-4 flex flex-row items-center justify-center gap-2
                             transition-all duration-700 delay-500
                             ${show ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}> {/*part 2*/}
                 <a href="https://www.facebook.com/profile.php?id=100088162999110" className='p-3 bg-slate-50 rounded-full hover:bg-blue-600 transition cursor-pointer'>
-                            <FaFacebook className="h-16 w-16"/>
+                            <FaFacebook className="h-6 w-6 md:w-16 md:h-16"/>
                         </a>
                          <a href="https://www.instagram.com/g.allets/" className='p-3 bg-slate-50 rounded-full hover:bg-red-500 transition cursor-pointer'>
-                            <FaInstagram className="h-16 w-16"/>
+                            <FaInstagram className="h-6 w-6 md:w-16 md:h-16"/>
                         </a>
                         <a href="https://wa.me/6285822916469" className='p-3 bg-slate-50 rounded-full hover:bg-green-500 transition cursor-pointer'>
-                            <FaWhatsapp className="h-16 w-16"/>
+                            <FaWhatsapp className="h-6 w-6 md:w-16 md:h-16"/>
                         </a>
                         <a href="mailto:gamlielatahalele02@gmail.com" className='p-3 bg-slate-50 rounded-full hover:bg-red-500 transition cursor-pointer'>
-                            <MdOutlineMail className="h-16 w-16"/>
+                            <MdOutlineMail className="h-6 w-6 md:w-16 md:h-16"/>
                         </a>
             </div>
         </div>
