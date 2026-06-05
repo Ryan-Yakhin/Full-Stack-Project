@@ -1,4 +1,5 @@
 import Logo from "..//assets/cult.png";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
     return(
@@ -8,9 +9,9 @@ export default function Navbar() {
                 <img src={Logo} alt="Logo" className="h-full w-full object-cover" />
             </div>
             <div className="flex flex-row gap-10">
-                <span className="hover:text-zinc-100"><a href="#home">Home</a></span>
-                <span className="hover:text-zinc-100"><a href="#player">Player</a></span>
-                <span className="hover:text-zinc-100"><a href="#contact">Contact</a></span>
+                <span className="hover:text-zinc-100"><Link to="/">Home</Link></span>
+                <span className="hover:text-zinc-100"><Link to="/player">Player</Link></span>
+                <span className="hover:text-zinc-100"><Link to="/contact">Contact</Link></span>
             </div>  
         </div>
         </>
