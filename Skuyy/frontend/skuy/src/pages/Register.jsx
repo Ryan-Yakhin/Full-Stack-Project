@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import api from "../services/api";
+import { useNavigate } from "react-router-dom";
 
 import p1 from "../assets/gunung.jpg";
 import p2 from "../assets/mount.jpg";
@@ -21,15 +23,27 @@ export default function Register() {
     });
   }
 
-  function handleSubmit(e) {
+  const navigate = useNavigate();
+
+  async function handleSubmit(e) {
     e.preventDefault();
 
-    if (formData.password !== formData.confirmPassword) {
-      alert("Password tidak sama");
-      return;
-    }
+    try {
+      await api.post("/auth/register", {
+       name: formData.name,
+        email: formData.email,
+        password: formData.password,
+      });
 
-    console.log(formData);
+      alert("Register berhasil");
+
+      navigate("/");
+    } catch (error) {
+      alert(
+        error.response?.data?.message ||
+        "Register gagal"
+      );
+    }
   }
 
   return (
@@ -92,7 +106,7 @@ export default function Register() {
           "
         >
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
-            Register
+            Daftar
           </h2>
 
           <div className="mb-4">
@@ -212,7 +226,7 @@ export default function Register() {
               transition
             "
           >
-            Register
+            Daftar
           </button>
 
           <p className="text-center mt-5 text-gray-600">
@@ -221,7 +235,7 @@ export default function Register() {
               to="/"
               className="text-orange-500 font-semibold"
             >
-              Login
+              Masuk
             </Link>
           </p>
         </form>

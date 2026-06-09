@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import api from "../services/api";
+import { useNavigate } from "react-router-dom"; 
 
 import p1 from "../assets/gunung.jpg";
 import p2 from "../assets/mount.jpg";
@@ -19,9 +21,29 @@ export default function Login() {
     });
   }
 
-  function handleSubmit(e) {
+  const navigate = useNavigate();
+
+  async function handleSubmit(e) {
     e.preventDefault();
-    console.log(formData);
+
+    try {
+      const response = await api.post(
+        "/auth/login",
+        formData
+      );
+
+      localStorage.setItem(
+        "token",
+        response.data.token
+      );
+
+     navigate("/profile");
+    } catch (error) {
+      alert(
+        error.response?.data?.message ||
+        "Login gagal"
+      );
+    }
   }
 
   return (
@@ -90,7 +112,7 @@ export default function Login() {
           "
         >
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
-            Login
+            Masuk
           </h2>
 
           <div className="mb-4">
