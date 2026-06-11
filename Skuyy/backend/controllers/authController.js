@@ -97,7 +97,7 @@ const profile = async (req, res) => {
   try {
     const result = await pool.query(
       `
-      SELECT id,name,email,profile_picture
+      SELECT id,name,email,bio,profile_picture
       FROM users
       WHERE id = $1
       `,
@@ -112,8 +112,31 @@ const profile = async (req, res) => {
   }
 };
 
+const updateProfile = async (req, res) => {
+  try{
+    const { name, bio, profile_picture } = req.body;
+    const result = await pool.query(
+      `
+      UPDATE users SET name = $1, bio = $2, profile_picture = $3
+      WHERE id = $4
+      RETURNING *
+      `,
+      [name, bio, profile_picture, req.user.id]
+    );
+
+    res.json(result.rows[0]);
+  } catch (error) {
+    console.log(error);
+
+    res.status(500).json({
+      message: "server error",
+    });
+  }
+}
+
 module.exports = {
   register,
   login,
   profile,
+  updateProfile
 };
