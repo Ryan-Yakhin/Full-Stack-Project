@@ -132,7 +132,7 @@ export default function Main(){
                          <a href="https://github.com/Ryan-Yakhin" className='p-3 bg-slate-50 rounded-full hover:bg-gray-500 transition cursor-pointer'>
                             <FaGithub className="h-6 w-6"/>
                         </a>
-                         <a href="https://www.linkedin.com/in/ryan-yakhin-kogoya-427372293/" className='p-3 bg-slate-50 rounded-full hover:bg-blue-600 transition cursor-pointer'>
+                         <a href="https://www.linkedin.com/in/ryan-yakhin-t-kogoya-427372293/" className='p-3 bg-slate-50 rounded-full hover:bg-blue-600 transition cursor-pointer'>
                             <FaLinkedin className="h-6 w-6"/>
                         </a>
                         <a href="https://wa.me/6281219946735" className='p-3 bg-slate-50 rounded-full hover:bg-green-500 transition cursor-pointer'>
