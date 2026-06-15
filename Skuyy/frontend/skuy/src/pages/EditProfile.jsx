@@ -40,7 +40,7 @@ export default function EditProfile() {
         localStorage.getItem("token");
 
       const response = await api.get(
-        "/auth/profile",
+        "/users/profile",
         {
           headers: {
             Authorization:
@@ -98,7 +98,7 @@ export default function EditProfile() {
         localStorage.getItem("token");
 
         await api.put(
-          "/auth/profile",
+          "/users/profile",
           {
             name: formData.name,
             bio: formData.bio,

@@ -7,7 +7,8 @@ export default function Profile() {
   const navigate = useNavigate();
 
   const [user, setUser] = useState(null);
-  
+  const [posts, setPosts] = useState([]);
+
   useEffect(() => {
     const token = localStorage.getItem("token");
 
@@ -17,6 +18,7 @@ export default function Profile() {
     }
 
     fetchProfile();
+    fetchPosts();
   }, []);
 
   async function fetchProfile() {
@@ -25,7 +27,7 @@ export default function Profile() {
         localStorage.getItem("token");
 
       const response = await api.get(
-        "/auth/profile",
+        "/users/profile",
         {
           headers: {
             Authorization:
@@ -40,6 +42,36 @@ export default function Profile() {
      console.log(error);
     }
   }
+
+  async function fetchPosts(){
+
+  try{
+
+    const token =
+    localStorage.getItem("token");
+
+
+    const response =
+    await api.get(
+      "/posts/user",
+      {
+        headers:{
+          Authorization:
+          `Bearer ${token}`
+        }
+      }
+    );
+
+    console.log(response.data);
+    setPosts(response.data);
+
+  }catch(error){
+
+    console.log(error);
+
+  }
+
+}
 
   function handleLogout() {
     localStorage.removeItem("token");
@@ -156,30 +188,126 @@ export default function Profile() {
           Postingan Saya
         </h2>
 
-        <div className="bg-slate-900 rounded-2xl p-10 text-center text-slate-400">
+        {
+            posts.length === 0 ? (
 
-          <p>
-            Belum ada postingan wisata.
-          </p>
+              <div className="
+                bg-slate-900
+                rounded-2xl
+                p-10
+                text-center
+                text-slate-400
+              ">
 
-          <button
-            className="
-              mt-4
-              bg-orange-500
-              hover:bg-orange-600
-              px-6
-              py-2
-              rounded-xl
-              text-white
-            "
-          >
-            Tambah Postingan
-          </button>
+                <p>
+                  Belum ada postingan wisata.
+                </p>
 
-        </div>
+                <button
+                  onClick={() =>
+                    navigate("/create-post")
+                  }
 
+                  className="
+                    mt-4
+                    bg-orange-500
+                    hover:bg-orange-600
+                    px-6
+                    py-2
+                    rounded-xl
+                    text-white
+                  "
+                >
+                  Tambah Postingan
+                </button>
+
+              </div>
+            ) : (
+              <div>
+                <div className="
+                grid
+                md:grid-cols-2
+                lg:grid-cols-3
+                gap-6
+              ">
+
+                {
+                  posts.map((post)=>(
+                    <div
+                      key={post.id}
+                      className="
+                        bg-slate-900
+                        rounded-2xl
+                        overflow-hidden
+                      "
+                    >
+                      <img
+                        src={post.img_url}
+                        alt={post.title}
+                        className="
+                          h-52
+                          w-full
+                          object-cover
+                        "
+                      />
+
+                      <div className="p-5">
+                        <h3 className="
+                          text-xl
+                          font-bold
+                        ">
+                          {post.title}
+                        </h3>
+
+                        <p className="
+                          text-slate-400
+                          mt-2
+                        ">
+                          {post.location}
+                        </p>
+
+                        <span className="
+                          inline-block
+                          mt-3
+                          bg-orange-500
+                          px-3
+                          py-1
+                          rounded-full
+                          text-sm
+                        ">
+                          {post.category}
+                        </span>
+
+                      </div>
+                    </div>
+                    
+                  ))
+                }
+                
+              </div>
+              
+                <button
+                  onClick={() =>
+                    navigate("/create-post")
+                  }
+
+                  className="
+                    mt-4
+                    bg-orange-500
+                    hover:bg-orange-600
+                    px-6
+                    py-2
+                    rounded-xl
+                    text-white
+                  "
+                >
+                  Tambah Postingan
+                </button>
+
+              </div>
+            )
+          }
       </div>
-
     </div>
   </div>
   );
