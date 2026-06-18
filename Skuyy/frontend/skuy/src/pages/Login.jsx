@@ -117,7 +117,8 @@ export default function Login() {
 
           <div className="mb-4">
             <label className="block text-gray-700 mb-2">
-              Email (Tidak harus menggunakan Email asli !)
+              <span>Email</span> <br />
+              <span>(Silahkan Register, tidak menggunakan Email asli !)</span>
             </label>
 
             <input
