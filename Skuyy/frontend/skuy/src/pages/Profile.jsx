@@ -149,38 +149,6 @@ export default function Profile() {
         </div>
       </div>
 
-      {/* Statistik */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-
-        <div className="bg-slate-900 p-6 rounded-2xl text-center">
-          <h2 className="text-3xl font-bold text-orange-500">
-            0
-          </h2>
-          <p className="text-slate-400">
-            Postingan
-          </p>
-        </div>
-
-        <div className="bg-slate-900 p-6 rounded-2xl text-center">
-          <h2 className="text-3xl font-bold text-orange-500">
-            0
-          </h2>
-          <p className="text-slate-400">
-            Tempat Dikunjungi
-          </p>
-        </div>
-
-        <div className="bg-slate-900 p-6 rounded-2xl text-center">
-          <h2 className="text-3xl font-bold text-orange-500">
-            0
-          </h2>
-          <p className="text-slate-400">
-            Favorit
-          </p>
-        </div>
-
-      </div>
-
       {/* Postingan Saya */}
       <div className="mt-10">
 
@@ -307,6 +275,19 @@ export default function Profile() {
               </div>
             )
           }
+          <button 
+          onClick={() => navigate("/home")}
+          
+          className="mt-4
+                    bg-orange-500
+                    hover:bg-orange-600
+                    px-6
+                    py-2
+                    rounded-xl
+                    text-white
+                  ">
+            Beranda
+          </button>
       </div>
     </div>
   </div>

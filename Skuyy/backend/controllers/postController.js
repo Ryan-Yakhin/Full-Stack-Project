@@ -92,7 +92,52 @@ const getUserPosts = async(req,res)=>{
 
 };
 
+const getAllPosts = async(req,res)=>{
+
+  try{
+
+    const result = await pool.query(
+      `
+      SELECT
+        posts.id,
+        posts.title,
+        posts.description,
+        posts.category,
+        posts.location,
+        posts.img_url,
+        posts.created_at,
+
+        users.name,
+        users.profile_picture
+
+      FROM posts
+
+      JOIN users
+      ON posts.user_id = users.id
+
+      ORDER BY posts.created_at DESC
+
+      `
+    );
+
+
+    res.json(result.rows);
+
+
+  }catch(error){
+
+    console.log(error);
+
+    res.status(500).json({
+      message:"Server error"
+    });
+
+  }
+
+};
+
 module.exports = {
   createPost,
-  getUserPosts
+  getUserPosts,
+  getAllPosts
 };

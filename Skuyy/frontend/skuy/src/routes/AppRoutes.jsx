@@ -5,6 +5,7 @@ import Register from "../pages/Register";
 import Profile from "../pages/Profile";
 import EditProfile from "../pages/EditProfile";
 import CreatePost from "../pages/CreatePost";
+import Home from "../pages/Home";
 
 import ProtectedRoute from "../componenets/ProtectedRoute";
 
@@ -26,6 +27,11 @@ export default function AppRouters() {
       <Route path="/create-post" element = {
         <ProtectedRoute>
           <CreatePost/>
+        </ProtectedRoute>
+      }/>
+      <Route path="/home" element = {
+        <ProtectedRoute>
+          <Home/>
         </ProtectedRoute>
       }/>
     </Routes>

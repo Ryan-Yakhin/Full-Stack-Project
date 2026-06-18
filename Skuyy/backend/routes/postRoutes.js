@@ -4,7 +4,8 @@ const router = express.Router();
 
 const {
   createPost,
-  getUserPosts
+  getUserPosts,
+  getAllPosts
 } = require("../controllers/postController");
 
 const authMiddleware =
@@ -21,5 +22,10 @@ router.get(
   authMiddleware,
   getUserPosts
 );
+
+router.get(
+  "/",
+  getAllPosts
+)
 
 module.exports = router;
