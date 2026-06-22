@@ -9,14 +9,20 @@ const postRoutes = require("./routes/postRoutes");
 const app = express();
 
 app.use(
-  //"http://localhost:5173"
+  
   cors(
     {
       origin:"https://full-stack-project-zr3y-eufqre7we-ryan-yakhin.vercel.app",
-      credentials: true 
+      credentials: true,
+      methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+      allowedHeaders: ["Content-Type", "Authorization"] 
     }
   )
 );
+
+app.options("*", (req, res) => {
+  res.sendStatus(200);
+});
 
 app.use(express.json());
 
