@@ -2,6 +2,8 @@ import {useState, useEffect} from "react";
 import api from "../services/api";
 import { useNavigate } from "react-router-dom";
 
+import pp from "../assets/pp.jpg";
+
 export default function Profile() {
   
   const navigate = useNavigate();
@@ -137,7 +139,7 @@ export default function Profile() {
           {/* Avatar */}
           <div className="relative">
             <img
-              src={user.profile_picture || "https://i.pravatar.cc/300"}
+              src={user.profile_picture || pp}
               alt="Profile"
               className="w-40 h-40 rounded-full border-4 border-orange-500 object-cover"
             />
