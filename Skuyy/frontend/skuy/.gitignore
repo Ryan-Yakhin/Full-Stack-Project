@@ -3,6 +3,7 @@ node_modules/
 
 #enviroment variables
 .env
+.env.*
 
 # Production build
 dist/
