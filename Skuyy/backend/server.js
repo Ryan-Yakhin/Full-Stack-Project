@@ -9,9 +9,10 @@ const postRoutes = require("./routes/postRoutes");
 const app = express();
 
 app.use(
+  //"http://localhost:5173"
   cors(
     {
-      origin: "http://localhost:5173",
+      origin:"https://full-stack-project-zr3y-eufqre7we-ryan-yakhin.vercel.app/",
       credentials: true 
     }
   )
