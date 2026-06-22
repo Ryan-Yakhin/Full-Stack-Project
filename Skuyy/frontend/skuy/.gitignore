@@ -1,3 +1,9 @@
+#dependecies
+node_modules/
+
+#enviroment variables
+.env
+
 # Logs
 logs
 *.log
