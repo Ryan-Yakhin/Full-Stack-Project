@@ -4,6 +4,9 @@ node_modules/
 #enviroment variables
 .env
 
+# Production build
+dist/
+
 # Logs
 logs
 *.log
