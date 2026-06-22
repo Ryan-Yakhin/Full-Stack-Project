@@ -12,7 +12,7 @@ app.use(
   //"http://localhost:5173"
   cors(
     {
-      origin:"https://full-stack-project-zr3y-eufqre7we-ryan-yakhin.vercel.app/",
+      origin:"https://full-stack-project-zr3y-eufqre7we-ryan-yakhin.vercel.app",
       credentials: true 
     }
   )
