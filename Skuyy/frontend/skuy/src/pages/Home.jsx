@@ -8,6 +8,7 @@ export default function Home(){
 
   const [posts, setPosts] = useState([]);
   const [search, setSearch] = useState("");
+  const [selectedImage,setSelectedImage] = useState(null);
 
   useEffect(()=>{
     fetchPosts();
@@ -43,6 +44,11 @@ export default function Home(){
 
   });
 
+  function handleLogout() {
+    localStorage.removeItem("token");
+    window.location.href = "/";
+  }
+
   return(
 
     <div className="
@@ -77,7 +83,8 @@ export default function Home(){
             Jelajahi Wisata
           </h1>
 
-          <button
+          <div className="flex flex-row gap-6">
+            <button
             onClick={()=>navigate("/profile")}
             className="
               bg-orange-500
@@ -90,6 +97,19 @@ export default function Home(){
             Profile
           </button>
 
+          <button
+            onClick={handleLogout}
+            className="
+              bg-red-500
+              px-5
+              py-2
+              rounded-xl
+              hover:bg-red-600
+            "
+          >
+            Logout
+          </button>
+          </div>
 
         </div>
 
@@ -175,10 +195,13 @@ export default function Home(){
 
                       alt={post.title}
 
+                      onClick={()=>setSelectedImage(post.img_url)}
+
                       className="
                         h-[500px]
                         w-full
                         object-cover
+                        cursor-pointer
                       "
 
                     />
@@ -187,11 +210,15 @@ export default function Home(){
 
                       {/* User */}
 
-                      <div className="
+                      <div 
+                      onClick={()=> navigate(`/user/${post.user_id}`)}
+                      className="
                         flex
                         items-center
                         gap-3
                         mb-4
+                        cursor-pointer
+                        hover:opacity-50
                       ">
 
                         <img
@@ -275,6 +302,39 @@ export default function Home(){
         }
 
       </div>
+
+      {
+        selectedImage && (
+
+          <div
+            onClick={() => setSelectedImage(null)}
+            className="
+              fixed
+              inset-0
+              bg-black/80
+              flex
+              items-center
+              justify-center
+              z-50
+              p-5
+            "
+          >
+
+            <img
+              src={selectedImage}
+              alt="Preview"
+              className="
+                max-h-[90vh]
+                max-w-[90vw]
+                rounded-2xl
+                shadow-2xl
+              "
+            />
+
+          </div>
+
+        )
+      }
 
     </div>
 

@@ -82,6 +82,50 @@ export default function Profile() {
     return <div>Loading...</div>;
   }
 
+  async function handleDelete(id){
+
+    const confirmDelete =
+    confirm(
+      "Yakin ingin menghapus postingan?"
+    );
+
+
+    if(!confirmDelete)
+        return;
+
+
+    try{
+
+        const token =
+        localStorage.getItem("token");
+
+
+        await api.delete(
+            `/posts/${id}`,
+            {
+                headers:{
+                    Authorization:
+                    `Bearer ${token}`
+                }
+            }
+        );
+
+
+        setPosts(
+            posts.filter(
+                post=>post.id !== id
+            )
+        );
+
+
+    }catch(error){
+
+        console.log(error);
+
+    }
+
+}
+
   return (
   <div className="min-h-screen bg-slate-950 text-white p-6">
     <div className="max-w-5xl mx-auto">
@@ -245,6 +289,24 @@ export default function Profile() {
                         ">
                           {post.category}
                         </span>
+
+                        <div className="flex gap-3 mt-4">
+
+                          <button
+                            onClick={() => navigate(`/edit-post/${post.id}`)}
+                            className="flex-1 bg-blue-500 hover:bg-blue-600 py-2 rounded-xl transition"
+                          >
+                            Edit 
+                          </button>
+
+                          <button
+                            onClick={() => handleDelete(post.id)}
+                            className="flex-1 bg-red-500 hover:bg-red-600 py-2 rounded-xl transition"
+                          >
+                            Hapus
+                          </button>
+
+                        </div>
 
                       </div>
                     </div>

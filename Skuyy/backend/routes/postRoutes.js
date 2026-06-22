@@ -4,8 +4,11 @@ const router = express.Router();
 
 const {
   createPost,
+  updatePost,
+  deletePost,
   getUserPosts,
-  getAllPosts
+  getAllPosts,
+  getPostById
 } = require("../controllers/postController");
 
 const authMiddleware =
@@ -26,6 +29,24 @@ router.get(
 router.get(
   "/",
   getAllPosts
-)
+);
+
+router.put(
+"/:id",
+authMiddleware,
+updatePost
+);
+
+router.delete(
+"/:id",
+authMiddleware,
+deletePost
+);
+
+router.get(
+  "/:id",
+  authMiddleware,
+  getPostById
+);
 
 module.exports = router;

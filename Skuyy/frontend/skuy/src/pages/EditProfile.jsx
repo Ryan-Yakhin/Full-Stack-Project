@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 import { supabase } from "../config/supabase";
 
+import toast from "react-hot-toast";
+
 export default function EditProfile() {
 
   const navigate = useNavigate();
@@ -113,7 +115,7 @@ export default function EditProfile() {
           }
         );
 
-        alert(
+        toast.success(
           "Profil berhasil diperbarui"
         );
         navigate("/profile");

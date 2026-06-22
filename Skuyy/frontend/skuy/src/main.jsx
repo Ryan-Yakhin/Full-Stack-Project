@@ -5,10 +5,13 @@ import AppRoutes from './routes/AppRoutes.jsx'
 import { StrictMode } from 'react'
 import './index.css'
 
+import {Toaster} from "react-hot-toast";
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <AppRoutes />
+      < Toaster position='top-right' reverseOrder={false} />
     </BrowserRouter>
   </StrictMode>,
 )

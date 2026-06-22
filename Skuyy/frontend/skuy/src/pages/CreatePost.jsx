@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 import { supabase } from "../config/supabase";
 
+import toast from "react-hot-toast";
+
 export default function CreatePost() {
 
   const navigate = useNavigate();
@@ -50,7 +52,7 @@ export default function CreatePost() {
       !formData.category ||
       !formData.location
     ) {
-      alert("Semua data harus diisi");
+      toast.error("Semua data harus diisi");
       return;
     }
 
@@ -64,6 +66,28 @@ export default function CreatePost() {
 
       // Upload image
       if (image) {
+
+        // cek tipe file
+      if(!image.type.startsWith("image")){
+
+          toast.error(
+            "File harus berupa gambar"
+          );
+
+        return;
+
+      }
+
+      // cek ukuran file
+      if(image.size > 5 * 1024 * 1024){
+
+        toast.error(
+         "Ukuran gambar maksimal 5MB"
+        );
+
+        return;
+
+      }
 
         const fileName =
           `${Date.now()}-${image.name}`;
@@ -103,7 +127,9 @@ export default function CreatePost() {
       );
 
 
-      alert("Postingan berhasil dibuat");
+      toast.success(
+        "Postingan berhasil dibuat"
+      );
 
       navigate("/profile");
 
@@ -112,7 +138,7 @@ export default function CreatePost() {
 
       console.log(error);
 
-      alert(
+      toast.error(
         error.response?.data?.message ||
         "Gagal membuat postingan"
       );

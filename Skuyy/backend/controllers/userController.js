@@ -53,7 +53,64 @@ const updateProfile = async(req,res)=>{
     }
 };
 
+const getUserProfile = async(req,res)=>{
+
+try{
+
+
+const user =
+await pool.query(
+`
+SELECT id,name,email,bio,profile_picture
+FROM users
+WHERE id=$1
+`,
+[
+req.params.id
+]
+);
+
+
+
+const posts =
+await pool.query(
+`
+SELECT *
+FROM posts
+WHERE user_id=$1
+ORDER BY created_at DESC
+`,
+[
+req.params.id
+]
+);
+
+
+
+res.json({
+
+user:user.rows[0],
+
+posts:posts.rows
+
+});
+
+
+}catch(error){
+
+console.log(error);
+
+res.status(500).json({
+message:error.message
+});
+
+
+}
+
+}
+
 module.exports={
 profile,
-updateProfile
+updateProfile,
+getUserProfile
 };

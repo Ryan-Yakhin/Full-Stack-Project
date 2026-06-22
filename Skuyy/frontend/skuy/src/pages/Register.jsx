@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import api from "../services/api";
 import { useNavigate } from "react-router-dom";
 
+import toast from "react-hot-toast";
+
 import p1 from "../assets/gunung.jpg";
 import p2 from "../assets/mount.jpg";
 import p3 from "../assets/jampat.jpg";
@@ -35,11 +37,11 @@ export default function Register() {
         password: formData.password,
       });
 
-      alert("Register berhasil");
+      toast.success("Register berhasil");
 
       navigate("/");
     } catch (error) {
-      alert(
+      toast.error(
         error.response?.data?.message ||
         "Register gagal"
       );

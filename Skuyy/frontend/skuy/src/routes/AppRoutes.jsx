@@ -6,6 +6,8 @@ import Profile from "../pages/Profile";
 import EditProfile from "../pages/EditProfile";
 import CreatePost from "../pages/CreatePost";
 import Home from "../pages/Home";
+import EditPost from "../pages/EditPost";
+import UserProfile from "../pages/UserProfile";
 
 import ProtectedRoute from "../componenets/ProtectedRoute";
 
@@ -34,6 +36,18 @@ export default function AppRouters() {
           <Home/>
         </ProtectedRoute>
       }/>
+      <Route
+        path="/edit-post/:id"
+        element={
+            <ProtectedRoute>
+                <EditPost />
+            </ProtectedRoute>
+        }
+    />
+      <Route
+        path="/user/:id"
+        element={<UserProfile/>}
+      />
     </Routes>
   );
 }
