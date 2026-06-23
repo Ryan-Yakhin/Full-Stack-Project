@@ -5,7 +5,7 @@ import Crown from "../assets/crown.svg";
 import Apl from "../assets/app.svg";
 import Globe from "../assets/globe.svg";
 import Gym from "../assets/gym.jpg";
-import Food from "../assets/food.jpg";
+import Skuy from "../assets/skuy.jpg";
 import Porto from "../assets/porto.jpg";
 
 export default function Main(){
@@ -30,22 +30,27 @@ export default function Main(){
 
   const portofolios = [
     {
-      link: "https://full-stack-project-khaki-three.vercel.app/",
+      link: "https://full-stack-project-zr3y.vercel.app/",
+      title: "SKUY",
+      desc : "This website is a travel-sharing platform where users can share their travel experiences, explore posts from other users, and discover new destinations. I built the frontend using React.js and Tailwind, I developed the backend using Node.js and Express.js, with Supabase as the database and storage solution.",
+      pict : Skuy,
+      tools: ["React.js", "Tailwind", "Node.js","Express.js"]
+    },
+
+    {
+      link : "https://full-stack-project-khaki-three.vercel.app/",
       title: "Fit Life Gym",
       desc : "This website is a landing page for a gym (FitLife Gym), designed to attract users to join or try the services offered. I built this website using React as the frontend framework to create reusable and interactive components, and Tailwind CSS to speed up styling and deliver a modern, responsive design.",
-      pict : Gym
+      pict : Gym,
+      tools: ["React.js", "Tailwind"]
     },
-    {
-      link: "https://full-stack-project-px6k.vercel.app/",
-      title: "Food Recipe",
-      desc : "This website is a Food Recipe application built using the MERN Stack (MongoDB, Express.js, React, Node.js) that allows users to view, add, and manage food recipes online.",
-      pict : Food
-    },
+    
     {
       link: "https://full-stack-project-uwuu.vercel.app/",
       title: "Portoflio Gami",
       desc : "This website is a portfolio website for a graphic designer, showcasing their work and skills. I built this website using React as the frontend framework to create reusable and interactive components, and Tailwind CSS to speed up styling and deliver a modern, responsive design.",
-      pict : Porto
+      pict : Porto,
+      tools: ["React.js", "Tailwind"]
     }
   ]
 
@@ -105,7 +110,22 @@ export default function Main(){
                           <img className="w-full h-full" src={item.pict} alt="" />
                         </div>
                         <h4 className="text-white mt-5 text-center">{item.title}</h4>
-                        <p className="text-center font-extralight text-sm mt-2 text-gray-400">{item.desc} <br /> <br /> CLICK TO SEE</p>
+                        <p className="text-center font-extralight text-sm mt-2 text-gray-400">{item.desc}</p>
+
+                        <div className="flex flex-wrap justify-center gap-2 mt-5">
+                          {
+                            item.tools.map((tool, toolIndex)=>(
+                               <span
+                                 key={toolIndex}
+                                 className="bg-blue-500/20 text-blue-400 border border-blue-500/30 px-3 py-1 rounded-full text-xs font-medium"
+                               >
+                                  {tool}
+                                </span>
+                           ))
+                         }
+                        </div>
+
+                        <br /> <br /> CLICK TO SEE
                       </a>
                     </div>
                   )
