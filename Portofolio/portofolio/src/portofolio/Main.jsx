@@ -34,7 +34,7 @@ export default function Main(){
       title: "SKUY",
       desc : "This website is a travel-sharing platform where users can share their travel experiences, explore posts from other users, and discover new destinations. I built the frontend using React.js and Tailwind, I developed the backend using Node.js and Express.js, with Supabase as the database and storage solution.",
       pict : Skuy,
-      tools: ["React.js", "Tailwind", "Node.js","Express.js"]
+      tools: ["React.js", "Tailwind", "Node.js","Express.js","PostgreSQL"]
     },
 
     {
@@ -65,7 +65,7 @@ export default function Main(){
               <span className="font-extrabold text-white">Yakhin </span>
               <span className="font-extralight text-blue-500">Kogoya</span>
             </h3>
-            <p className="font-light">Full-Stack Web Developer with experience building personal projects using React.js, Tailwind CSS, Node.js, and Express.js. Passionate about developing responsive web applications, creating clean user interfaces, and building backend systems with database integration.</p>
+            <p className="font-light">Full-Stack Web Developer with experience building personal projects using React.js, Tailwind CSS, Node.js, Express.js, and PostgreSQL. Passionate about developing responsive web applications, creating clean user interfaces, and building backend systems with database integration.</p>
           </div>
           <div className="mx-auto md:mt-0 flex-shrink-0 md:w-1/3 lg:w-1/3"> {/*Picture*/}
             <img src={pic} className="w-48 h-48 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full border-2 border-black object-cover" alt="pic" />
