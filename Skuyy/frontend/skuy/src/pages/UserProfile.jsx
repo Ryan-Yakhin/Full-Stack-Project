@@ -1,8 +1,11 @@
 import {useEffect,useState} from "react";
 import {useParams} from "react-router-dom";
 import api from "../services/api";
+import { useNavigate } from "react-router-dom";
 
 export default function UserProfile(){
+
+    const navigate = useNavigate();
 
     const {id}=useParams();
 
