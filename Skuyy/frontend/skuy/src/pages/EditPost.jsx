@@ -88,25 +88,25 @@ export default function EditPost(){
 
             let imgUrl = preview;
 
-            // Jika user upload gambar baru
+            // if user upload a new image
             if(image){
 
-                // cek tipe file
+                // check file type
                 if(!image.type.startsWith("image")){
 
                     toast.error(
-                      "File harus berupa gambar"
+                      "File must be img"
                     );
 
                   return;
 
                 }
 
-                // cek ukuran file
+                // cek file size
                 if(image.size > 5 * 1024 * 1024){
 
                     toast.error(
-                     "Ukuran gambar maksimal 5MB"
+                     "Max file size is 5MB"
                     );
 
                     return;
@@ -158,7 +158,7 @@ export default function EditPost(){
             );
 
             toast.success(
-                "Postingan berhasil diperbarui"
+                "Post Successfully Updated"
             );
 
             navigate("/profile");
@@ -169,7 +169,7 @@ export default function EditPost(){
 
             toast.error(
                 error.response?.data?.message ||
-                "Gagal update post"
+                "Failed to update post"
             );
 
         }finally{
@@ -213,7 +213,7 @@ export default function EditPost(){
                         font-bold
                     "
                     >
-                        Edit Wisata
+                        Edit Post
                     </h1>
 
                     <button
@@ -228,7 +228,7 @@ export default function EditPost(){
                     "
                     >
 
-                        ← Kembali
+                        ← Back
 
                     </button>
 
@@ -259,7 +259,7 @@ export default function EditPost(){
                             font-semibold
                         "
                         >
-                            Foto Wisata
+                            Upload Image
                         </label>
 
                         {
@@ -304,7 +304,7 @@ export default function EditPost(){
                     <div>
 
                         <label className="block mb-2">
-                            Nama Tempat
+                            Place Name
                         </label>
 
 
@@ -335,7 +335,7 @@ export default function EditPost(){
                     <div>
 
                         <label className="block mb-2">
-                            Deskripsi
+                            Description
                         </label>
 
 
@@ -370,7 +370,7 @@ export default function EditPost(){
 
 
                         <label className="block mb-2">
-                            Kategori
+                            Category
                         </label>
 
                         <select
@@ -393,23 +393,23 @@ export default function EditPost(){
                         >
 
                             <option value="">
-                                Pilih kategori
+                                Select Category
                             </option>
 
                             <option value="Gunung">
-                                Gunung
+                                Mount
                             </option>
 
                             <option value="Pantai">
-                                Pantai
+                                Beach
                             </option>
 
                             <option value="Air Terjun">
-                                Air Terjun
+                                Water Fall
                             </option>
 
                             <option value="Budaya">
-                                Budaya
+                                Culture
                             </option>
 
                         </select>
@@ -421,7 +421,7 @@ export default function EditPost(){
                     <div>
 
                         <label className="block mb-2">
-                            Lokasi
+                            Location
                         </label>
 
                         <input
@@ -462,9 +462,9 @@ export default function EditPost(){
                         {
                             loading
                             ?
-                            "Menyimpan..."
+                            "Saving..."
                             :
-                            "Simpan Perubahan"
+                            "Change saved"
                         }
 
                     </button>

@@ -52,7 +52,7 @@ export default function CreatePost() {
       !formData.category ||
       !formData.location
     ) {
-      toast.error("Semua data harus diisi");
+      toast.error("All field Required !");
       return;
     }
 
@@ -71,7 +71,7 @@ export default function CreatePost() {
       if(!image.type.startsWith("image")){
 
           toast.error(
-            "File harus berupa gambar"
+            "File must be img"
           );
 
         return;
@@ -82,7 +82,7 @@ export default function CreatePost() {
       if(image.size > 5 * 1024 * 1024){
 
         toast.error(
-         "Ukuran gambar maksimal 5MB"
+         "Maximum file size is 5MB"
         );
 
         return;
@@ -128,7 +128,7 @@ export default function CreatePost() {
 
 
       toast.success(
-        "Postingan berhasil dibuat"
+        "Post Successfully posted"
       );
 
       navigate("/profile");
@@ -140,7 +140,7 @@ export default function CreatePost() {
 
       toast.error(
         error.response?.data?.message ||
-        "Gagal membuat postingan"
+        "Failed to create post"
       );
 
 
@@ -161,7 +161,7 @@ export default function CreatePost() {
         <div className="flex justify-between items-center mb-8">
 
           <h1 className="text-3xl font-bold">
-            Tambah Wisata
+            Add a Tourism Place
           </h1>
 
           <button
@@ -172,7 +172,7 @@ export default function CreatePost() {
               transition
             "
           >
-            ← Kembali
+            ← Back
           </button>
 
         </div>
@@ -195,7 +195,7 @@ export default function CreatePost() {
           <div>
 
             <label className="block font-semibold mb-3">
-              Foto Wisata
+              Tourism Picture
             </label>
 
 
@@ -227,7 +227,7 @@ export default function CreatePost() {
               "
             >
 
-              Pilih Foto
+              Select Picture
 
               <input
                 type="file"
@@ -246,14 +246,14 @@ export default function CreatePost() {
           <div>
 
             <label className="block font-semibold mb-2">
-              Nama Tempat
+              Place Name
             </label>
 
             <input
               name="title"
               value={formData.title}
               onChange={handleChange}
-              placeholder="Contoh: Gunung Bromo"
+              placeholder="Ex: Mount Bromo"
               className="
                 w-full
                 bg-slate-800
@@ -274,7 +274,7 @@ export default function CreatePost() {
           <div>
 
             <label className="block font-semibold mb-2">
-              Deskripsi
+              Description
             </label>
 
             <textarea
@@ -282,7 +282,7 @@ export default function CreatePost() {
               value={formData.description}
               onChange={handleChange}
               rows="5"
-              placeholder="Ceritakan tentang tempat wisata..."
+              placeholder="Tell us about the place..."
               className="
                 w-full
                 bg-slate-800
@@ -304,7 +304,7 @@ export default function CreatePost() {
           <div>
 
             <label className="block font-semibold mb-2">
-              Kategori
+              Category
             </label>
 
 
@@ -325,23 +325,23 @@ export default function CreatePost() {
             >
 
               <option value="">
-                Pilih kategori
+                Select Category
               </option>
 
               <option value="Gunung">
-                Gunung
+                Mount
               </option>
 
               <option value="Pantai">
-                Pantai
+                Beach
               </option>
 
               <option value="Air Terjun">
-                Air Terjun
+                Water Fall
               </option>
 
               <option value="Budaya">
-                Budaya
+                Culture
               </option>
 
             </select>
@@ -354,7 +354,7 @@ export default function CreatePost() {
           <div>
 
             <label className="block font-semibold mb-2">
-              Lokasi
+              Location
             </label>
 
 
@@ -362,7 +362,7 @@ export default function CreatePost() {
               name="location"
               value={formData.location}
               onChange={handleChange}
-              placeholder="Contoh: Jawa Timur"
+              placeholder="Ex: West Java"
               className="
                 w-full
                 bg-slate-800
@@ -397,7 +397,7 @@ export default function CreatePost() {
 
             {loading
               ? "Uploading..."
-              : "Publikasikan Wisata"
+              : "Publish Tourism Place"
             }
 
           </button>

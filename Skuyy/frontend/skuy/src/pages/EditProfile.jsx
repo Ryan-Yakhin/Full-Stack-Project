@@ -116,7 +116,7 @@ export default function EditProfile() {
         );
 
         toast.success(
-          "Profil berhasil diperbarui"
+          "Profile Successfully updated"
         );
         navigate("/profile");
 
@@ -140,19 +140,19 @@ export default function EditProfile() {
       >
 
         <h1 className="text-3xl font-bold mb-8">
-          Edit Profil
+          Edit Profile
         </h1>
 
         <div className="mb-5">
 
-          <label className="block mb-2">Foto Profil</label>
+          <label className="block mb-2">Profile Picture</label>
           {preview &&(
             <img src={preview} alt="" className="w-32 h-32 rounded-full object-cover mb-4"/>
           )}
           <input type="file" accept="image/*" onChange={handleImage} />
 
           <label className="block mb-2">
-            Nama
+            Name
           </label>
 
           <input
@@ -201,7 +201,7 @@ export default function EditProfile() {
             rounded-xl
           "
         >
-          Simpan
+          Save
         </button>
 
       </form>

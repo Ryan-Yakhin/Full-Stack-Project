@@ -59,7 +59,7 @@ export default function UserProfile(){
                 </div>
 
                 <h2 className="text-2xl font-bold mt-10 mb-5">
-                  Postingan
+                  Posts
                 </h2>
 
                 <div className="grid md:grid-cols-3 gap-5">

@@ -91,7 +91,7 @@ export default function Register() {
           </h1>
 
           <p className="text-gray-300 mt-2">
-            Buat akun dan mulai bagikan pengalaman wisatamu.
+            Create an account and start sharing your travel experiences.
           </p>
         </div>
 
@@ -108,12 +108,12 @@ export default function Register() {
           "
         >
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
-            Daftar
+            Sign Up
           </h2>
 
           <div className="mb-4">
             <label className="block text-gray-700 mb-2">
-              Nama
+              Username
             </label>
 
             <input
@@ -121,7 +121,7 @@ export default function Register() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Masukkan nama"
+              placeholder="Enter Usernama"
               className="
                 w-full
                 border
@@ -139,7 +139,7 @@ export default function Register() {
 
           <div className="mb-4">
             <label className="block text-gray-700 mb-2">
-              Email
+              Email (YourUsername@gmail.com)
             </label>
 
             <input
@@ -147,7 +147,7 @@ export default function Register() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Masukkan email"
+              placeholder="Enter email"
               className="
                 w-full
                 border
@@ -173,7 +173,7 @@ export default function Register() {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              placeholder="Masukkan password"
+              placeholder="Enter password"
               className="
                 w-full
                 border
@@ -191,7 +191,7 @@ export default function Register() {
 
           <div className="mb-6">
             <label className="block text-gray-700 mb-2">
-              Konfirmasi Password
+              Confirm Password
             </label>
 
             <input
@@ -199,7 +199,7 @@ export default function Register() {
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
-              placeholder="Ulangi password"
+              placeholder="Repeat password"
               className="
                 w-full
                 border
@@ -228,16 +228,16 @@ export default function Register() {
               transition
             "
           >
-            Daftar
+            Sign Up
           </button>
 
           <p className="text-center mt-5 text-gray-600">
-            Sudah punya akun?{" "}
+            Already have an account ?{" "}
             <Link
               to="/"
               className="text-orange-500 font-semibold"
             >
-              Masuk
+              Sign In
             </Link>
           </p>
         </form>

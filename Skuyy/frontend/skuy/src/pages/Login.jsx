@@ -88,7 +88,7 @@ export default function Login() {
         {/* Branding */}
         <div className="mb-8 text-center">
           <h2 className="text-2xl text-white font-light">
-            Selamat Datang di
+            Welcome to 
           </h2>
 
           <h1 className="text-6xl font-black tracking-widest text-orange-500 drop-shadow-lg">
@@ -96,7 +96,7 @@ export default function Login() {
           </h1>
 
           <p className="mt-3 text-gray-300 max-w-md">
-            Temukan destinasi wisata terbaik dan bagikan pengalamanmu kepada traveler lainnya.
+            Discover the best travel destinations and share your experiences with other travelers.
           </p>
         </div>
 
@@ -114,13 +114,13 @@ export default function Login() {
           "
         >
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
-            Masuk
+            Login
           </h2>
 
           <div className="mb-4">
             <label className="block text-gray-700 mb-2">
               <span>Email</span> <br />
-              <span>(Silahkan Register, tidak menggunakan Email asli !)</span>
+              <span>(Please Register, do not use your real email !)</span>
             </label>
 
             <input
@@ -128,7 +128,7 @@ export default function Login() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Masukkan email"
+              placeholder="Enter email"
               className="
                 w-full
                 border
@@ -153,7 +153,7 @@ export default function Login() {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              placeholder="Masukkan password"
+              placeholder="Enter password"
               className="
                 w-full
                 border
@@ -185,7 +185,7 @@ export default function Login() {
           </button>
 
           <p className="text-center text-gray-600 mt-5">
-            Belum punya akun?{" "}
+            Don't have an account ?{" "}
             <Link
               to="/register"
               className="text-orange-500 font-semibold"

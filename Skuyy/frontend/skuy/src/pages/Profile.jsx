@@ -199,7 +199,7 @@ export default function Profile() {
       <div className="mt-10">
 
         <h2 className="text-2xl font-bold mb-6">
-          Postingan Saya
+          My Posts
         </h2>
 
         {
@@ -214,7 +214,7 @@ export default function Profile() {
               ">
 
                 <p>
-                  Belum ada postingan wisata.
+                  No post yet.
                 </p>
 
                 <button
@@ -232,7 +232,7 @@ export default function Profile() {
                     text-white
                   "
                 >
-                  Tambah Postingan
+                  Add Post
                 </button>
 
               </div>
@@ -305,7 +305,7 @@ export default function Profile() {
                             onClick={() => handleDelete(post.id)}
                             className="flex-1 bg-red-500 hover:bg-red-600 py-2 rounded-xl transition"
                           >
-                            Hapus
+                            Delete
                           </button>
 
                         </div>
@@ -333,7 +333,7 @@ export default function Profile() {
                     text-white
                   "
                 >
-                  Tambah Postingan
+                  Add Post
                 </button>
 
               </div>
@@ -350,7 +350,7 @@ export default function Profile() {
                     rounded-xl
                     text-white
                   ">
-            Beranda
+            Home
           </button>
       </div>
     </div>

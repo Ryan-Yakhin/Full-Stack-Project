@@ -30,7 +30,7 @@ export default function Home(){
 
   }
 
-  // Filter pencarian
+  // Search Filter
   const filteredPosts = posts.filter((post)=>{
 
     const keyword = search.toLowerCase();
@@ -80,7 +80,7 @@ export default function Home(){
             text-4xl
             font-bold
           ">
-            Jelajahi Wisata
+            Explore Tourism Place
           </h1>
 
           <div className="flex flex-row gap-6">
@@ -125,7 +125,7 @@ export default function Home(){
             onChange={(e)=>setSearch(e.target.value)}
 
             placeholder="
-              Cari wisata, lokasi, kategori...
+              Search for tourism location, categories, people...
             "
 
             className="
@@ -155,7 +155,7 @@ export default function Home(){
               text-slate-400
             ">
 
-              Tidak ada wisata ditemukan
+              No result found
 
             </div>
 
