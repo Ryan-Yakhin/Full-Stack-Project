@@ -328,19 +328,19 @@ export default function CreatePost() {
                 Select Category
               </option>
 
-              <option value="Gunung">
+              <option value="Mount">
                 Mount
               </option>
 
-              <option value="Pantai">
+              <option value="Beach">
                 Beach
               </option>
 
-              <option value="Air Terjun">
+              <option value="Water Fall">
                 Water Fall
               </option>
 
-              <option value="Budaya">
+              <option value="Culture">
                 Culture
               </option>
 

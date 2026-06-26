@@ -80,6 +80,21 @@ export default function UserProfile(){
                     </div>
                   ))}
                 </div>
+
+                <button 
+                  onClick={() => navigate("/home")}
+          
+                  className="mt-4
+                           bg-orange-500
+                            hover:bg-orange-600
+                            px-6
+                          py-2
+                            rounded-xl
+                           text-white
+                         ">
+                  Home
+                </button>
+
             </div>
         </div>
 
