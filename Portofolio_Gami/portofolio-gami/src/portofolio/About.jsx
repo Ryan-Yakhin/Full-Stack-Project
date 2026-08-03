@@ -1,4 +1,4 @@
-import Gami from "../assets/gami.jpeg";
+import Gami from "../assets/gami.jpg";
 
 export default function About() {
   return (
@@ -14,9 +14,9 @@ export default function About() {
 
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="rounded-[2rem] border border-slate-200 bg-slate-950 p-6 text-white shadow-xl">
-            <div className="flex flex-col items-center gap-5 md:flex-row">
-              <div className="flex h-48 w-48 items-center justify-center overflow-hidden rounded-lg border-2 border-blue-400/70 shadow-lg sm:h-56 sm:w-56 md:h-60 md:w-60">
-                <img src={Gami} alt="Stella" className="h-full w-full object-cover" />
+            <div className="flex flex-col items-center gap-6 md:flex-row md:items-center">
+              <div className="flex h-44 w-44 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-blue-400/70 shadow-lg sm:h-52 sm:w-52 md:h-56 md:w-56">
+                <img src={Gami} alt="Stella" className="h-full w-full object-cover object-center" />
               </div>
               <div className="text-center md:text-left">
                 <h3 className="text-2xl font-semibold">Editor dengan fokus storytelling</h3>
