@@ -1,73 +1,59 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
-export default function Home(){
+export default function Home() {
+  const phrases = ["Hi, I'm Stella", "I'm an Editor", "Welcome to My Website"];
 
-    const temp = ["Hi, I'm Stella", "I'm an Editor", "Welcome to My Website"];
+  const [tempIndex, setTempIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
 
-    const [tempIndex, setTempIndex] = useState(0);
-    const [charIndex, setCharIndex] = useState(0);
+  useEffect(() => {
+    let timeout;
 
-    useEffect(() => {
-        let timeout;
-
-        if (charIndex < temp[tempIndex].length) {
-             // typing
-            timeout = setTimeout(() => {
-                setCharIndex((prev) => prev + 1);
-            }, 200);
-    } else {
-      // pause before moving to the next word
+    if (charIndex < phrases[tempIndex].length) {
       timeout = setTimeout(() => {
-        setTempIndex((prevIndex) =>
-          prevIndex === temp.length - 1 ? 0 : prevIndex + 1
-        );
+        setCharIndex((prev) => prev + 1);
+      }, 120);
+    } else {
+      timeout = setTimeout(() => {
+        setTempIndex((prevIndex) => (prevIndex === phrases.length - 1 ? 0 : prevIndex + 1));
         setCharIndex(0);
-      }, 1000); // pause 1 sec
+      }, 1200);
     }
 
     return () => clearTimeout(timeout);
-    }, [charIndex, tempIndex]);
+  }, [charIndex, tempIndex, phrases]);
 
-    const text = temp[tempIndex].slice(0, charIndex);
+  const text = phrases[tempIndex].slice(0, charIndex);
 
-    const [show, setShow] = useState(false);
-        useEffect(() => {
-        setShow(true);
-    }, []);
+  return (
+    <section
+      id="home"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-800 px-6 py-20 text-white"
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.2),_transparent_45%)]" />
+      <div className="relative z-10 flex w-full max-w-6xl flex-col items-center gap-10 lg:flex-row lg:justify-between lg:gap-16">
+        <div className="max-w-2xl text-center lg:text-left">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-blue-100">
+            Portfolio • Social Media Editor
+          </p>
+          <h1 className="text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+            Membuat konten yang menarik, elegan, dan berkesan.
+          </h1>
+          <div className="mt-6 h-12 text-2xl font-semibold text-slate-100 sm:text-3xl">
+            <span className="border-r-2 border-white/80 pr-2">{text}</span>
+          </div>
+          <p className="mt-5 text-lg leading-8 text-slate-200">
+            Halo! Saya Stella, seorang Social Media Editor yang fokus pada konten yang relevan, menarik, dan berdampak untuk memperkuat branding serta meningkatkan engagement.
+          </p>
+        </div>
 
-    return(
-       <div id="home"
-        className={` group bg-gradient-to-l from-blue-700 to-purple-700 min-h-screen
-        flex flex-col items-center justify-center gap-16 px-6
-        transition-all duration-200
-        ${show ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}>
-
-    {/* TEXT */}
-    <div className={`h-10 text-3xl font-semibold font-mono text-center text-white
-    transition-all duration-500 delay-300
-    ${show ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}>
-    {text}
-  </div>
-
-  {/* CIRCLE */}
-  <div className={`flex items-center justify-center text-2xl
-                    transition-all duration-700 delay-500
-                    ${show ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}>
-    <div className="bg-gray-950 w-40 h-40 rounded-full flex flex-col items-center justify-center">
-      <span className="font-semibold text-slate-50">Stella</span>
-      <span className="font-extralight text-blue-400">Design</span>
-    </div>
-  </div>
-
-  {/* DESCRIPTION */}
-  <div className={`text-white font-mono text-center max-w-xl
-                    transition-all duration-1000 delay-700
-                    ${show ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}>
-    <p>
-      Halo!, saya Stella, seorang Social Media Editor yang berfokus pada pembuatan konten yang menarik, relevan, dan berdampak untuk membangun engagement dan memperkuat identitas brand.
-    </p>
-  </div>
-
-</div>
-    )
+        <div className="rounded-[2rem] border border-white/20 bg-white/10 p-6 shadow-2xl backdrop-blur-xl">
+          <div className="flex h-48 w-48 flex-col items-center justify-center rounded-full border-2 border-blue-300/70 bg-slate-950/80 text-center shadow-inner sm:h-56 sm:w-56">
+            <span className="text-2xl font-semibold text-slate-50">Stella</span>
+            <span className="mt-2 text-lg font-light text-blue-400">Design</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Poto1 from "../assets/poto1.avif";
 import Poto2 from "../assets/poto2.avif";
 import Poto3 from "../assets/poto3.avif";
@@ -12,83 +12,63 @@ import Poto10 from "../assets/poto10.avif";
 import Poto11 from "../assets/poto11.avif";
 import Poto12 from "../assets/poto12.avif";
 
-export default function Project(){
-    const pic = [Poto1,Poto2,Poto3,Poto4,Poto5,Poto6];
-    const pic1 = [Poto7,Poto8,Poto9,Poto10,Poto11,Poto12]
-    
-    const [selectedImage, setSelectedImage] = useState(null);
+export default function Project() {
+  const projectAella = [Poto1, Poto2, Poto3, Poto4, Poto5, Poto6];
+  const personalProject = [Poto7, Poto8, Poto9, Poto10, Poto11, Poto12];
+  const [selectedImage, setSelectedImage] = useState(null);
 
-    const [show, setShow] = useState(false);
-            useEffect(() => {
-            setShow(true);
-        }, []);
-
-    return(
-        <div className={`font-mono pt-10 bg-gradient-to-l from-blue-700 to-purple-700 flex flex-col min-h-screen items-center gap-10
-                        transition-all duration-300
-                            ${show ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}> 
-            <div className={`text-2xl place-content-center
-                            transition-all duration-500 delay-300
-                            ${show ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}>
-            <div className="bg-gray-950 rounded-md p-2">
-                 <span className="font-semibold text-slate-50">My </span>
-                <span className="font-extralight text-blue-500">Project</span>
-            </div>
-            </div>
-
-            <div className={`flex flex-col gap-10
-                            transition-all duration-700 delay-500
-                            ${show ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}>
-
-                <div className=" w-full px-10"> {/*with aellas cosmetic*/}
-                <div className="text-2xl text-slate-50 font-semibold">
-                    <h1>Project With Aella Cosmetic</h1>
-                </div>
-                <div className="grid grid-cols-3 gap-6 py-5">
-                    {
-                        pic.map((item,index) => (
-                            <div key={index} className="shadow-xl rounded-xl overflow-hidden cursor-pointer" onClick={() => setSelectedImage(item)}>
-                                <img src={item} alt="" className="w-full h-52 object-cover hover:scale-105 duration-300" />
-                            </div>
-                            )
-                        )
-                    }
-                </div>
-            </div>
-
-            <div className=" w-full px-10"> {/*with aellas cosmetic*/}
-                <div className="text-2xl text-slate-50 font-semibold">
-                    <h1>Personal Project</h1>
-                </div>
-                <div className="grid grid-cols-3 gap-6 py-5">
-                    {
-                        pic1.map((item,index) => (
-                            <div key={index} className="shadow-xl rounded-xl overflow-hidden cursor-pointer" onClick={() => setSelectedImage(item)}>
-                                <img src={item} alt="" className="w-full h-52 object-cover hover:scale-105 duration-300" />
-                            </div>
-                            )
-                        )
-                    }
-                </div>
-            </div>
-
-            </div>
-            
-
-            {
-                selectedImage && (
-                    <div
-                        className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
-                        onClick={() => setSelectedImage(null)}
-                    >
-                     <img
-                            src={selectedImage}
-                            alt=""
-                            className="max-w-[90%] max-h-[90%] rounded-xl shadow-2xl"
-                        />
-                    </div>
-                )
-            }
+  return (
+    <section className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-purple-900 px-6 py-16 text-white">
+      <div className="mx-auto flex max-w-6xl flex-col gap-8">
+        <div className="rounded-[2rem] border border-white/10 bg-white/10 p-8 shadow-2xl backdrop-blur">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-200">Portfolio</p>
+          <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">Project yang telah saya buat</h2>
+          <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">
+            Koleksi visual dari pekerjaan branding, editing, dan konten digital yang menonjolkan estetika serta tujuan komunikasi.
+          </p>
         </div>
-    )
+
+        <div className="space-y-8">
+          <div>
+            <h3 className="mb-4 text-2xl font-semibold">Project With Aella Cosmetic</h3>
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {projectAella.map((item, index) => (
+                <div
+                  key={index}
+                  className="group cursor-pointer overflow-hidden rounded-[1.5rem] border border-white/10 shadow-xl"
+                  onClick={() => setSelectedImage(item)}
+                >
+                  <img src={item} alt="Project Aella" className="h-56 w-full object-cover transition duration-300 group-hover:scale-105" />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 className="mb-4 text-2xl font-semibold">Personal Project</h3>
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {personalProject.map((item, index) => (
+                <div
+                  key={index}
+                  className="group cursor-pointer overflow-hidden rounded-[1.5rem] border border-white/10 shadow-xl"
+                  onClick={() => setSelectedImage(item)}
+                >
+                  <img src={item} alt="Personal project" className="h-56 w-full object-cover transition duration-300 group-hover:scale-105" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <img src={selectedImage} alt="Preview project" className="max-h-[90%] max-w-[90%] rounded-[1.5rem] shadow-2xl" />
+        </div>
+      )}
+    </section>
+  );
 }
