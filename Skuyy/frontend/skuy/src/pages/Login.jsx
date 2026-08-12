@@ -39,7 +39,27 @@ export default function Login() {
         response.data.token
       );
 
-     navigate("/profile");
+      navigate("/profile");
+    } catch (error) {
+      toast.error(
+        error.response?.data?.message ||
+        "Login gagal"
+      );
+    }
+  }
+
+  async function handleGuestLogin() {
+    try {
+      const response = await api.post(
+        "/auth/login",
+        {
+          email: "ryan@gmail.com",
+          password: "123456",
+        }
+      );
+
+      localStorage.setItem("token", response.data.token);
+      navigate("/profile");
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
@@ -182,6 +202,24 @@ export default function Login() {
             "
           >
             Login
+          </button>
+
+          <button
+            type="button"
+            onClick={handleGuestLogin}
+            className="
+              w-full
+              mt-4
+              bg-slate-800
+              hover:bg-slate-900
+              text-white
+              font-semibold
+              py-3
+              rounded-xl
+              transition
+            "
+          >
+            Login as Guest
           </button>
 
           <p className="text-center text-gray-600 mt-5">
