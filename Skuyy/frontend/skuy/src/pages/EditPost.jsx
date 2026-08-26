@@ -24,31 +24,27 @@ export default function EditPost(){
     const [loading,setLoading] = useState(false);
 
     useEffect(()=>{
+        async function loadPost(){
+            try{
+                const token = localStorage.getItem("token");
+                const response = await api.get(`/posts/${id}`, {
+                    headers:{ Authorization:`Bearer ${token}` }
+                });
 
-        fetchPost();
-
-    },[]);
-
-    async function fetchPost(){
-
-        try{
-            const token = localStorage.getItem("token");
-
-            const response = await api.get(
-              `/posts/${id}`,
-              {
-                headers:{
-                  Authorization:`Bearer ${token}`
-                }
-              }
-            );
-
-            setPost(response.data);
-
-        }catch(error){
-            console.log(error);
+                setFormData({
+                    title: response.data.title || "",
+                    description: response.data.description || "",
+                    category: response.data.category || "",
+                    location: response.data.location || ""
+                });
+                setPreview(response.data.img_url || null);
+            }catch(error){
+                console.log(error);
+            }
         }
-    }
+
+        loadPost();
+    },[id]);
 
     function handleChange(e){
 

@@ -1,3 +1,76 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	:root {
+		font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+		color: #f5f5f4;
+		background: #101415;
+		font-synthesis: none;
+		text-rendering: optimizeLegibility;
+	}
+
+	body {
+		min-width: 320px;
+		min-height: 100vh;
+		margin: 0;
+		background:
+			radial-gradient(circle at 12% 0%, rgba(237, 128, 63, 0.1), transparent 24rem),
+			radial-gradient(circle at 88% 100%, rgba(64, 133, 119, 0.11), transparent 26rem),
+			#101415;
+	}
+
+	button,
+	input,
+	textarea,
+	select {
+		font: inherit;
+	}
+
+	button:focus-visible,
+	input:focus-visible,
+	textarea:focus-visible,
+	select:focus-visible {
+		outline: 2px solid #fdba74;
+		outline-offset: 3px;
+	}
+}
+
+@layer components {
+	.bg-slate-950 {
+		background-color: transparent;
+		background-image:
+			radial-gradient(circle at 12% 0%, rgba(237, 128, 63, 0.1), transparent 24rem),
+			radial-gradient(circle at 88% 100%, rgba(64, 133, 119, 0.11), transparent 26rem);
+	}
+
+	.bg-slate-900 {
+		background-color: rgba(26, 32, 32, 0.92);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		box-shadow: 0 20px 55px rgba(0, 0, 0, 0.18);
+	}
+
+	.bg-slate-800 {
+		background-color: #131918;
+		border-color: rgba(255, 255, 255, 0.1);
+	}
+
+	.bg-orange-500 {
+		background-color: #f59e62;
+		color: #17302d;
+	}
+
+	.hover\:bg-orange-600:hover {
+		background-color: #fdba74;
+	}
+
+	.rounded-3xl {
+		border-radius: 1.5rem;
+	}
+
+	.rounded-2xl,
+	.rounded-xl {
+		border-radius: 0.9rem;
+	}
+}

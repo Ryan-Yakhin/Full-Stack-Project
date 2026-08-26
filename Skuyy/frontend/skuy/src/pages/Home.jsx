@@ -11,24 +11,17 @@ export default function Home(){
   const [selectedImage,setSelectedImage] = useState(null);
 
   useEffect(()=>{
-    fetchPosts();
-  },[]);
-
-  async function fetchPosts(){
-
-    try{
-
-      const response = await api.get("/posts");
-
-      setPosts(response.data);
-
-    }catch(error){
-
-      console.log(error);
-
+    async function loadPosts(){
+      try{
+        const response = await api.get("/posts");
+        setPosts(response.data);
+      }catch(error){
+        console.log(error);
+      }
     }
 
-  }
+    loadPosts();
+  },[]);
 
   // Search Filter
   const filteredPosts = posts.filter((post)=>{
