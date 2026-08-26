@@ -8,14 +8,23 @@ const userRoutes = require("./routes/userRoutes");
 const postRoutes = require("./routes/postRoutes");
 const app = express();
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://full-stack-project-zr3y.vercel.app"
+];
+
 app.use(
-  
   cors(
     {
-      origin:[
-        "http://localhost:5173",
-        "https://full-stack-project-v87u.vercel.app"
-      ],
+      origin(origin, callback) {
+        const isVercelPreview = /^https:\/\/full-stack-project-zr3y(?:-[a-z0-9-]+)?\.vercel\.app$/i.test(origin || "");
+
+        if (!origin || allowedOrigins.includes(origin) || isVercelPreview) {
+          return callback(null, true);
+        }
+
+        return callback(new Error("Origin not allowed by CORS"));
+      },
       credentials: true,
       methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
       allowedHeaders: ["Content-Type", "Authorization"] 
