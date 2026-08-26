@@ -14,7 +14,7 @@ app.use(
     {
       origin:[
         "http://localhost:5173",
-        "https://full-stack-project-zr3y.vercel.app"
+        "https://full-stack-project-v87u.vercel.app"
       ],
       credentials: true,
       methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
