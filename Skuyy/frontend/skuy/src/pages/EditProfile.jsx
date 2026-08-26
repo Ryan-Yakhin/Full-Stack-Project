@@ -33,25 +33,34 @@ export default function EditProfile() {
     });
 
   useEffect(() => {
-    async function loadProfile() {
-      try {
-        const token = localStorage.getItem("token");
-        const response = await api.get("/users/profile", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-
-        setFormData({
-          name: response.data.name || "",
-          bio: response.data.bio || "",
-          profile_picture: response.data.profile_picture || "",
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-    loadProfile();
+    fetchProfile();
   }, []);
+
+  async function fetchProfile() {
+    try {
+      const token =
+        localStorage.getItem("token");
+
+      const response = await api.get(
+        "/users/profile",
+        {
+          headers: {
+            Authorization:
+              `Bearer ${token}`,
+          },
+        }
+      );
+
+      setFormData({
+        name: response.data.name || "",
+        bio: response.data.bio || "",
+        profile_picture: response.data.profile_picture || "",
+      });
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   function handleChange(e) {
     setFormData({

@@ -13,18 +13,29 @@ export default function UserProfile(){
     const [posts,setPosts]=useState([]);
 
     useEffect(()=>{
-      async function loadUser(){
-        try{
-          const response = await api.get(`/users/${id}`);
-          setUser(response.data.user);
-          setPosts(response.data.posts);
-        }catch(error){
-          console.log(error);
-        }
-      }
 
-      loadUser();
-    },[id]);
+        fetchUser();
+
+    },[]);
+
+    async function fetchUser(){
+
+        try{
+
+            const response =
+            await api.get(`/users/${id}`);
+
+            setUser(response.data.user);
+
+            setPosts(response.data.posts);
+
+        }catch(error){
+
+            console.log(error);
+
+        }
+
+    }
 
     if(!user){
 
