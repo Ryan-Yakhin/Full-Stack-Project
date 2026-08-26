@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
+import path from "path";
 
 import notesRoutes from "./routes/notesRoutes.js";
 import { connectDB } from "./config/db.js";
@@ -11,11 +12,15 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5001;
+const __dirname = path.resolve();
 
 //middleware
-app.use(cors({
-    origin: "http://localhost:5173", // replace with your frontend URL
-})); // this middleware will allow cross origin requests from the frontend
+if(process.env.NODE_ENV !== "production"){
+    app.use(cors({
+        origin: "http://localhost:5173", // replace with your frontend URL
+    })); // this middleware will allow cross origin requests from the frontend
+}
+
 app.use(express.json()); // this middleware will parse json bodies : req.body
 app.use(rateLimiter); // this middleware will limit the number of requests to the server
 
@@ -26,6 +31,14 @@ app.use(rateLimiter); // this middleware will limit the number of requests to th
 // })
 
 app.use("/api/notes", notesRoutes);
+
+if(process.env.NODE_ENV === "production"){
+    app.use(express.static(path.join(__dirname,"../frontend/dist")))
+
+    app.get("/{*splat}",(req,res) =>{
+        res.sendFile(path.join(__dirname,"../frontend","dist","index.html"))
+    })
+}
 
 connectDB().then(()=>{
     app.listen(PORT, () => {
