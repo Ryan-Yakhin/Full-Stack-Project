@@ -40,11 +40,15 @@ if(process.env.NODE_ENV === "production"){
     })
 }
 
-connectDB().then(()=>{
-    app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
+export default app;
+
+if (!process.env.VERCEL) {
+    connectDB().then(()=>{
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+        });
     });
-});
+}
 
 
 
