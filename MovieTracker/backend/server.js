@@ -11,7 +11,7 @@ connectDB();
 
 const app = express();
 
-app.use(cors({ origin: process.env.CLIENT_URL }));
+app.use(cors({ origin: "https://full-stack-project-usb6.vercel.app" }));
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
