@@ -112,7 +112,7 @@ export default function Login() {
           </h2>
 
           <h1 className="text-6xl font-black tracking-widest text-orange-500 drop-shadow-lg">
-            SKUY
+            MovieTracker
           </h1>
 
           <p className="mt-3 text-gray-300 max-w-md">

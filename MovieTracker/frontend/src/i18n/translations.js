@@ -53,6 +53,8 @@ export const en = {
   "auth.registerLink": "Register here",
   "auth.guestLogin": "Login as Guest",
   "auth.guestLoggingIn": "Logging in...",
+  "auth.subtitle": "Discover the best movies and share your experiences with other movie enthusiasts.",
+  "auth.or": "or",
 };
 
 export const id = {
@@ -110,4 +112,6 @@ export const id = {
   "auth.registerLink": "Daftar di sini",
   "auth.guestLogin": "Masuk sebagai Guest",
   "auth.guestLoggingIn": "Sedang masuk...",
+  "auth.subtitle": "Temukan film terbaik dan bagikan pengalaman Anda dengan penggemar film lainnya.",
+  "auth.or":"atau",
 };
