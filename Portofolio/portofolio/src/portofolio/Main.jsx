@@ -5,7 +5,7 @@ import Crown from "../assets/crown.svg";
 import Apl from "../assets/app.svg";
 import Globe from "../assets/globe.svg";
 import Gym from "../assets/gym.jpg";
-import Skuy from "../assets/skuy.jpg";
+import Mt from "../assets/mt.jpg";
 import Porto from "../assets/porto.jpg";
 
 export default function Main(){
@@ -30,11 +30,11 @@ export default function Main(){
 
   const portofolios = [
     {
-      link: "https://full-stack-project-zr3y.vercel.app/",
-      title: "SKUY",
-      desc : "This website is a travel-sharing platform where users can share their travel experiences, explore posts from other users, and discover new destinations. I built the frontend using React.js and Tailwind, I developed the backend using Node.js and Express.js, with Supabase as the database and storage solution.",
-      pict : Skuy,
-      tools: ["React.js", "Tailwind", "Node.js","Express.js","PostgreSQL"]
+      link: "https://full-stack-project-mnix.vercel.app/",
+      title: "MovieTracker",
+      desc : "A movie tracking application built with the MERN Stack that allows users to search for movies, manage personal movie lists, and share reviews and ratings with other users.",
+      pict : Mt,
+      tools: ["React.js", "Tailwind", "Node.js","Express.js","MongoDB"]
     },
 
     {
