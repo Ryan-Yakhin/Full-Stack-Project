@@ -99,7 +99,7 @@ export default function Main(){
           <div className="w-9/12 mx-auto">
             <div className="flex flex-col "> {/*part1*/}
               <h2 className="uppercase font-extralight text-xs tracking-widest text-gray-500">- my works</h2>
-              <h1 className="font-semibold text-3xl">Featured Portofolios</h1>
+              <h1 className="font-semibold text-3xl">Featured Portfolio</h1>
             </div>
             <div className="flex flex-col lg:grid md:grid grid-cols-3 gap-10 py-10"> {/*part2*/}
               {
