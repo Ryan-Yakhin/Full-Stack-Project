@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 4rem; /* sesuaikan dengan tinggi navbar (h-16 = 4rem) */
+}
