@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const nav = [
   { label: "Beranda", to: "/" },
@@ -20,6 +20,16 @@ const nav = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState(null); // label item yang submenu-nya terbuka
+
+  const toggleSubmenu = (label) => {
+    setOpenSubmenu(openSubmenu === label ? null : label);
+  };
+
+  const closeMenu = () => {
+    setOpen(false);
+    setOpenSubmenu(null);
+  };
 
   return (
     <header className="sticky top-0 z-40 bg-[#1C1B19]/95 backdrop-blur border-b border-white/10">
@@ -28,6 +38,7 @@ export default function Navbar() {
           BangYusuf<span className="text-[#E2A03F]">Kontraktor</span>
         </span>
 
+        {/* Desktop menu — tetap pakai hover seperti sebelumnya */}
         <nav className="hidden md:flex items-center gap-7">
           {nav.map((item) => (
             <div key={item.label} className="relative group">
@@ -53,12 +64,49 @@ export default function Navbar() {
         </button>
       </div>
 
+      {/* Mobile menu — submenu klik untuk buka/tutup */}
       {open && (
-        <nav className="md:hidden border-t border-white/10 px-5 py-3 flex flex-col gap-3 bg-[#1C1B19]">
+        <nav className="md:hidden border-t border-white/10 px-5 py-3 flex flex-col gap-1 bg-[#1C1B19]">
           {nav.map((item) => (
-            <a key={item.label} href={item.href} className="text-sm text-[#E4E0D8]/80" onClick={() => setOpen(false)}>
-              {item.label}
-            </a>
+            <div key={item.label}>
+              {item.children ? (
+                <>
+                  <button
+                    onClick={() => toggleSubmenu(item.label)}
+                    className="w-full flex items-center justify-between py-2.5 text-sm text-[#E4E0D8]/80"
+                  >
+                    {item.label}
+                    <ChevronDown
+                      size={16}
+                      className={`transition-transform ${openSubmenu === item.label ? "rotate-180" : ""}`}
+                    />
+                  </button>
+
+                  {openSubmenu === item.label && (
+                    <div className="pl-4 flex flex-col border-l border-white/10 ml-1 mb-1">
+                      {item.children.map((c) => (
+                        <Link
+                          key={c.label}
+                          to={c.to}
+                          className="py-2 text-sm text-[#E4E0D8]/60"
+                          onClick={closeMenu}
+                        >
+                          {c.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <Link
+                  to={item.to}
+                  className="block py-2.5 text-sm text-[#E4E0D8]/80"
+                  onClick={closeMenu}
+                >
+                  {item.label}
+                </Link>
+              )}
+            </div>
           ))}
         </nav>
       )}

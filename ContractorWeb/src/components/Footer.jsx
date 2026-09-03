@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-5 grid md:grid-cols-3 gap-8 text-sm">
         <div>
           <p className="font-[Space_Grotesk] text-[#E4E0D8] font-semibold mb-3">
-            Bangun<span className="text-[#E2A03F]">Karya</span>
+            BangYusuf<span className="text-[#E2A03F]">Kontraktor</span>
           </p>
           <p className="leading-relaxed">Kontraktor bangun baru dan renovasi, melayani berbagai wilayah dengan standar kerja profesional.</p>
         </div>
