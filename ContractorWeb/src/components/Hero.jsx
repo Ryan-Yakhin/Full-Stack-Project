@@ -13,10 +13,10 @@ export default function Hero() {
             Konsultasi gratis, tanpa biaya survei
           </span>
           <h1 className="font-[Space_Grotesk] text-4xl md:text-5xl font-semibold leading-tight mb-5">
-            Bangun dan renovasi properti Anda dengan kontraktor yang bisa dipertanggungjawabkan
+            Bangun dan renovasi properti Anda dengan kontraktor yang berpengalaman
           </h1>
           <p className="text-[#E4E0D8]/70 leading-relaxed mb-8 max-w-md">
-            Kami menangani rumah tinggal, ruko, kantor, hingga bangunan komersial — dari perencanaan RAB sampai serah terima kunci.
+            Kami menangani rumah tinggal, ruko, kantor, hingga bangunan komersial — dari pengurusan IMB, perencanaan RAB sampai serah terima kunci.
           </p>
           <div className="flex gap-4">
             <a href="#kontak" className="bg-[#E2A03F] text-[#1C1B19] font-medium px-6 py-3 rounded-lg hover:bg-[#c98a2e] transition-colors">
@@ -33,7 +33,7 @@ export default function Hero() {
               <p className="text-xs text-[#E4E0D8]/60 mt-1">Tahun Pengalaman</p>
             </div>
             <div>
-              <p className="font-[Space_Grotesk] text-3xl font-semibold text-[#E2A03F]">300+</p>
+              <p className="font-[Space_Grotesk] text-3xl font-semibold text-[#E2A03F]">15+</p>
               <p className="text-xs text-[#E4E0D8]/60 mt-1">Proyek Selesai</p>
             </div>
           </div>

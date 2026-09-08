@@ -2,40 +2,40 @@ export const services = [
   {
     title: "Bangun Baru",
     desc: "Pembangunan rumah tinggal, ruko, kantor, gudang, hingga bangunan komersial dengan standar kualitas terukur.",
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600",
+    image: "https://plus.unsplash.com/premium_photo-1667509248428-658d1be12141?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Renovasi",
     desc: "Renovasi rumah, ruko, kantor, dapur, kamar mandi, penambahan ruang, sampai renovasi total.",
-    image: "https://images.unsplash.com/photo-1541976590-713941681591?w=600",
+    image: "https://plus.unsplash.com/premium_photo-1683141037836-e5a26067194d?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aG91c2UlMjByZW5vdmF0aW9ufGVufDB8fDB8fHww",
   },
   {
     title: "Interior",
     desc: "Pekerjaan plafon, molding, dan detail interior yang menyatu dengan konsep bangunan.",
-    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600",
+    image: "https://images.unsplash.com/photo-1618220179428-22790b461013?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW50ZXJpb3IlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D",
   },
   {
     title: "Desain",
     desc: "Desain arsitektur yang mencerminkan kebutuhan dan gaya hidup pemilik bangunan.",
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600",
+    image: "https://plus.unsplash.com/premium_photo-1682145930966-712ce7177919?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGFyY2l0ZWN0dXJlJTIwZGVzaWdufGVufDB8fDB8fHww",
   },
 ];
 
 export const whyUs = [
-  { title: "Profesional & Berpengalaman", desc: "Dikerjakan tim berpengalaman dengan standar kerja yang terukur di tiap tahap." },
+  { title: "Profesional & Berpengalaman", desc: "Dikerjakan team berpengalaman dengan standar kerja yang terukur di tiap tahap." },
   { title: "Harga Transparan", desc: "RAB disusun jelas sejak awal, tanpa biaya tersembunyi di tengah proyek." },
   { title: "Tepat Waktu", desc: "Jadwal proyek dipegang ketat tanpa mengorbankan kualitas pengerjaan." },
   { title: "Konsultasi Gratis", desc: "Survei lokasi dan penawaran awal tanpa biaya, sebelum kamu memutuskan apapun." },
 ];
 
 export const testimonials = [
-  { name: "Pak Dodi", location: "Tembalang, Semarang", text: "Bangunan sesuai ekspektasi, dengan lahan terbatas tetap menghasilkan desain yang artistik." },
-  { name: "Pak Hilal", location: "Semarang", text: "Desain bisa mengikuti keinginan saya sebagai klien, akhirnya rumah konsep modern terwujud." },
-  { name: "Bu Dwi", location: "BSB Semarang", text: "Pengerjaan tepat waktu, komunikatif, dan fast response setiap kali ada komplain." },
+  { name: "Pak Dodi", location: "Bekasi", text: "Bangunan sesuai ekspektasi, dengan lahan terbatas tetap menghasilkan desain yang sesuai dengan keinginan saya." },
+  { name: "Pak Hilal", location: "Jakarta", text: "Desain bisa mengikuti keinginan saya sebagai klien, dan saya puas dengan hasilnya." },
+  { name: "Bu Dwi", location: "Tangerang", text: "Pengerjaan tepat waktu, komunikatif, dan fast response setiap kalo ada komplain." },
 ];
 
 export const serviceAreas = [
-  "Jakarta", "Bogor", "Bekasi", "Tangerang"
+  "Jakarta", "Bogor", "Depok", "Bekasi", "Tangerang"
 ];
 
 export const articles = [
@@ -46,8 +46,8 @@ export const articles = [
 export const serviceDetails = {
   "bangun-baru": {
     title: "Bangun Baru",
-    tagline: "Dari lahan kosong menjadi bangunan siap huni",
-    heroImage: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200",
+    tagline: "Dari bongkar rumah lama hingga menjadi bangunan siap huni",
+    heroImage: "https://plus.unsplash.com/premium_photo-1667509248428-658d1be12141?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
       "Kami menangani pembangunan rumah tinggal, ruko, kantor, gudang, hingga bangunan komersial dari nol — mulai dari perencanaan RAB, desain, hingga serah terima kunci.",
     scope: ["Rumah Tinggal", "Ruko/Toko", "Gedung Perkantoran", "Kos/Kontrakan", "Gudang/Bangunan Industri"],
@@ -60,8 +60,8 @@ export const serviceDetails = {
   },
   "renovasi": {
     title: "Renovasi",
-    tagline: "Ubah bangunan lama jadi lebih fungsional dan bernilai",
-    heroImage: "https://images.unsplash.com/photo-1541976590-713941681591?w=1200",
+    tagline: "Ubah bangunan lama menjadi lebih fungsional dan bernilai",
+    heroImage: "https://plus.unsplash.com/premium_photo-1683141037836-e5a26067194d?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aG91c2UlMjByZW5vdmF0aW9ufGVufDB8fDB8fHww",
     description:
       "Layanan renovasi rumah, ruko, kantor, dapur, kamar mandi, penambahan ruang, hingga renovasi total — disesuaikan dengan kondisi bangunan eksisting.",
     scope: ["Renovasi Rumah", "Renovasi Dapur", "Renovasi Kamar Mandi", "Penambahan Ruang/Lantai", "Renovasi Atap & Plafon"],
@@ -75,7 +75,7 @@ export const serviceDetails = {
   "interior": {
     title: "Interior",
     tagline: "Detail interior yang menyatu dengan konsep bangunan",
-    heroImage: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200",
+    heroImage: "https://images.unsplash.com/photo-1618220179428-22790b461013?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW50ZXJpb3IlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D",
     description:
       "Pekerjaan plafon, molding, dan detail interior lain yang dikerjakan menyatu dengan struktur dan gaya bangunan Anda.",
     scope: ["Plafon & Molding", "Interior Ruang Tamu", "Interior Kamar", "Partisi Ruangan", "Built-in Furniture"],
@@ -89,7 +89,7 @@ export const serviceDetails = {
   "desain": {
     title: "Desain",
     tagline: "Desain yang mencerminkan kebutuhan dan gaya hidup Anda",
-    heroImage: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200",
+    heroImage: "https://plus.unsplash.com/premium_photo-1682145930966-712ce7177919?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGFyY2l0ZWN0dXJlJTIwZGVzaWdufGVufDB8fDB8fHww",
     description:
       "Kami menyusun desain arsitektur yang mempertimbangkan fungsi, anggaran, dan karakter personal pemilik bangunan.",
     scope: ["Desain Rumah Tinggal", "Desain Fasad", "Desain Interior", "Desain Ruang Komersial", "Konsultasi Tata Ruang"],

@@ -4,13 +4,13 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-5 grid md:grid-cols-3 gap-8 text-sm">
         <div>
           <p className="font-[Space_Grotesk] text-[#E4E0D8] font-semibold mb-3">
-            BangYusuf<span className="text-[#E2A03F]">Kontraktor</span>
+            Dream<span className="text-[#E2A03F]">House</span>
           </p>
           <p className="leading-relaxed">Kontraktor bangun baru dan renovasi, melayani berbagai wilayah dengan standar kerja profesional.</p>
         </div>
         <div>
           <p className="text-[#E4E0D8] font-medium mb-3">Kontak</p>
-          <p>Telepon: +62xxxxxxxx</p>
+          <p>Telepon: 085205361944</p>
           <p>Email: BangYusuf@gmail.com</p>
         </div>
         <div>
@@ -19,7 +19,7 @@ export default function Footer() {
         </div>
       </div>
       <p className="text-center text-xs mt-10 pt-6 border-t border-white/5">
-        © 2026 BangYusufContarctor. Seluruh hak cipta dilindungi.
+        © 2026 DreamHouse. Seluruh hak cipta dilindungi.
       </p>
     </footer>
   );

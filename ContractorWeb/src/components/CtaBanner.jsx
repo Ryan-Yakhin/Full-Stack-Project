@@ -7,7 +7,7 @@ export default function CtaBanner() {
         </h2>
         <p className="text-[#1C1B19]/70 mb-7">Konsultasi dan survei lokasi tanpa biaya.</p>
         <a
-          href="#"
+          href="https://wa.me/6285205361944"
           className="inline-block bg-[#1C1B19] text-white px-7 py-3 rounded-lg font-medium hover:bg-[#2a2925] transition-colors"
         >
           Hubungi via WhatsApp

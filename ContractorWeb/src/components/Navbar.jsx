@@ -35,7 +35,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-40 bg-[#1C1B19]/95 backdrop-blur border-b border-white/10">
       <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
         <span className="font-[Space_Grotesk] text-lg font-semibold text-[#E4E0D8] tracking-tight">
-          BangYusuf<span className="text-[#E2A03F]">Kontraktor</span>
+          Dream<span className="text-[#E2A03F]">House</span>
         </span>
 
         {/* Desktop menu — tetap pakai hover seperti sebelumnya */}
