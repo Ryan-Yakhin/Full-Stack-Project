@@ -7,6 +7,7 @@ import Globe from "../assets/globe.svg";
 import Gym from "../assets/gym.jpg";
 import Mt from "../assets/mt.jpg";
 import Porto from "../assets/porto.jpg";
+import Con from "../assets/contractor.png";
 
 export default function Main(){
 
@@ -50,6 +51,13 @@ export default function Main(){
       title: "Portoflio Gami",
       desc : "This website is a portfolio website for a graphic designer, showcasing their work and skills. I built this website using React as the frontend framework to create reusable and interactive components, and Tailwind CSS to speed up styling and deliver a modern, responsive design.",
       pict : Porto,
+      tools: ["React.js", "Tailwind"]
+    },
+    {
+      link: "https://full-stack-project-i3la.vercel.app/",
+      title: "Dream House",
+      desc : "This website is a contractor company website designed to showcase construction services and completed projects. I built this website using React as the frontend framework to create reusable and interactive components, and Tailwind CSS to deliver a modern, responsive, and visually appealing design.",
+      pict : Con,
       tools: ["React.js", "Tailwind"]
     }
   ]
@@ -101,7 +109,7 @@ export default function Main(){
               <h2 className="uppercase font-extralight text-xs tracking-widest text-gray-500">- my works</h2>
               <h1 className="font-semibold text-3xl">Featured Portfolio</h1>
             </div>
-            <div className="flex flex-col lg:grid md:grid grid-cols-3 gap-10 py-10"> {/*part2*/}
+            <div className="flex flex-col lg:grid md:grid grid-cols-4 gap-10 py-10"> {/*part2*/}
               {
                 portofolios.map((item, index) =>(
                     <div key={index} className="rounded-lg">
